@@ -41,3 +41,26 @@
 
 
 /* ─── Your styles below ─────────────────────────────────────── */
+
+/* ── FAQ Tab States ──────────────────────────────────────────── */
+.faq-tab[data-active="true"] {
+  background-color: #e0f0fe;
+  border: 1px solid #7ccdfd;
+  color: #0b456f;
+}
+.faq-tab[data-active="false"] {
+  color: #475569;
+}
+.faq-tab[data-active="false"]:hover {
+  background-color: #f1f5f9;
+}
+
+/* ── FAQ Accordion Animation ─────────────────────────────────── */
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease;
+}
+.faq-chevron {
+  transition: transform 250ms ease;
+}

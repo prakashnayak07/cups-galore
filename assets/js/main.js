@@ -210,4 +210,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ── FAQ Tabs ─────────────────────────────────────────────────── */
+  document.querySelectorAll('.faq-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.faq-tab').forEach(t => {
+        t.dataset.active = (t === tab) ? 'true' : 'false';
+      });
+      document.querySelectorAll('.faq-panel').forEach(panel => {
+        panel.hidden = (panel.id !== `faq-${target}`);
+      });
+    });
+  });
+
+  /* ── FAQ Accordion ────────────────────────────────────────────── */
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item    = trigger.closest('.faq-item');
+      const body    = item.querySelector('.faq-body');
+      const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
+
+      /* Close all items */
+      document.querySelectorAll('.faq-trigger').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.querySelector('.faq-chevron').style.transform = '';
+        t.closest('.faq-item').querySelector('.faq-body').style.maxHeight = '0';
+      });
+
+      /* Open clicked item if it was closed */
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        trigger.querySelector('.faq-chevron').style.transform = 'rotate(180deg)';
+        body.style.maxHeight = `${body.scrollHeight}px`;
+      }
+    });
+  });
+
 });

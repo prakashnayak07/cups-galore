@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Cups Galore</title>
+  <meta name="description" content="Frequently asked questions about Cups Galore's ordering process, artwork guidelines, delivery, and more." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/faq.html" />
+  <meta property="og:title"       content="FAQ | Cups Galore" />
+  <meta property="og:description" content="Frequently asked questions about Cups Galore's ordering, artwork, and delivery." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourdomain.com/faq.html" />
+  <meta property="og:image"       content="https://yourdomain.com/assets/images/og-image.jpg" />
+  <link rel="icon"             href="assets/images/favicon/favicon.ico" />
+  <link rel="icon"             href="assets/images/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/output.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <header></header>
+
+  <main class="flex-1">
+
+    <!-- ── Hero: Breadcrumb + Page Title + Contact Us Button ────── -->
+    <div class="border-b border-[#e2e8f0] flex justify-center">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-[42px] flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6">
+
+        <!-- Left: Breadcrumb + Title + Subtitle -->
+        <div class="flex flex-col gap-3">
+
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-2" aria-label="Breadcrumb">
+            <a href="index.html" class="text-[12px] leading-[17.04px] text-[#1e293b] underline">Home</a>
+            <span class="text-[12px] font-light leading-[17.04px] text-[#1e293b]">/</span>
+            <span class="text-[12px] font-semibold leading-[17.04px] text-[#1e293b] underline">FAQ</span>
+          </nav>
+
+          <!-- Title -->
+          <h1 class="text-[32px] xl:text-[44px] font-bold leading-[42.24px] xl:leading-[58.08px] text-[#1e293b]">
+            Your Questions<br>resolved in one place
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-[14px] text-black leading-[19.88px] w-full xl:max-w-[594px]">
+            We've gathered the most frequently asked questions from our users. If you don't find what you're looking for, let us know &amp; we'll be happy to assist you.
+          </p>
+        </div>
+
+        <!-- Right: Contact Us Button -->
+        <div class="shrink-0">
+          <a href="contact.html"
+             class="inline-flex items-center gap-[10px] bg-[#065386] rounded-full pl-4 pr-1 py-1 text-white text-[16px] font-medium leading-[22.72px] hover:bg-[#054370] transition-colors duration-200">
+            Contact Us
+            <span class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/20 shrink-0">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── FAQ Accordion Section ──────────────────────────────────── -->
+    <div class="bg-[#f8fafc] pt-[42px] pb-[60px] xl:pb-[100px] flex justify-center">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 flex flex-col gap-8">
+
+        <!-- Tab Filter -->
+        <div>
+          <div class="bg-white border border-[#f1f5f9] rounded-full p-1 flex gap-3 w-full xl:w-auto xl:inline-flex">
+            <button class="faq-tab flex-1 xl:flex-none px-4 py-[10px] rounded-full text-[14px] leading-[19.88px] whitespace-nowrap transition-colors duration-150"
+                    data-tab="general" data-active="true">
+              General FAQs
+            </button>
+            <button class="faq-tab flex-1 xl:flex-none px-4 py-[10px] rounded-full text-[14px] leading-[19.88px] whitespace-nowrap transition-colors duration-150 cursor-pointer"
+                    data-tab="artwork" data-active="false">
+              Artwork Guidelines
+            </button>
+          </div>
+        </div>
+
+        <!-- ── General FAQs Panel ──────────────────────────────── -->
+        <div id="faq-general" class="faq-panel flex flex-col gap-3">
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">How do I place an order?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">You can place an order through our website by browsing our products and adding items to your cart, or by calling us at <a href="tel:0296032588" class="text-[#0161a3] hover:underline">02 9603 2588</a>. For custom orders, please contact our sales team with your artwork and quantity requirements.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">What payment methods are accepted?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and direct bank transfer. For large corporate orders, payment terms may be arranged — please contact our sales team for details.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">Can I track my order status?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">Yes! Once your order is confirmed and dispatched, you'll receive a tracking number via email. You can use this to monitor your delivery progress through our courier's tracking portal.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">How do I return an item?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">If you're not satisfied with your order, please contact us within 14 days of delivery at <a href="mailto:sales@cupsgalore.com.au" class="text-[#0161a3] hover:underline">sales@cupsgalore.com.au</a> or call <a href="tel:0296032588" class="text-[#0161a3] hover:underline">02 9603 2588</a>. We'll work with you to resolve the issue, including replacements or refunds for defective items.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">What is the estimated delivery time?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">Standard delivery takes 5–10 business days after your order is dispatched. Custom printed orders have an additional 3–5 business day production time. Express delivery options are available — please enquire at checkout or contact us for details.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white border border-[#e2e8f0] rounded-[16px] overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between gap-6 px-6 py-4 text-left" aria-expanded="false">
+              <span class="flex-1 font-medium text-[16px] leading-[22.72px] text-[#0f172a]">Do you offer international shipping?</span>
+              <span class="faq-chevron bg-[#f1f5f9] rounded-full flex items-center justify-center size-6 shrink-0">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body">
+              <div class="px-6 pb-4">
+                <p class="text-[14px] leading-[19.88px] text-[#475569]">Currently we ship within Australia only. If you have an international shipping requirement, please contact our sales team at <a href="mailto:sales@cupsgalore.com.au" class="text-[#0161a3] hover:underline">sales@cupsgalore.com.au</a> and we'll do our best to accommodate your needs.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── Artwork Guidelines Panel (hidden by default) ──────── -->
+        <div id="faq-artwork" class="faq-panel flex flex-col gap-8" hidden>
+
+          <!-- Artwork Guidelines checklist -->
+          <div class="flex flex-col gap-3">
+            <h2 class="text-[24px] font-semibold leading-[31.68px] text-[#0f172a]">Artwork Guidelines</h2>
+            <div class="flex flex-col gap-3">
+
+              <div class="flex gap-1.5 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="text-[14px] leading-[19.88px] text-[#0f172a]">Please ensure that all images are embedded and fonts are outlined. Your image must fit inside the image area (the red dashed lines).</p>
+              </div>
+
+              <div class="flex gap-1.5 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="text-[14px] leading-[19.88px] text-[#0f172a]">Provide plenty of bleed if the background is patterned or coloured.</p>
+              </div>
+
+              <div class="flex gap-1.5 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="text-[14px] leading-[19.88px] text-[#0f172a]">Leave the template flat as we use specialised software to warp it and generate a 3D visual for your final approval.</p>
+              </div>
+
+              <div class="flex gap-1.5 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="text-[14px] leading-[19.88px] text-[#0f172a]">Save the file in hi-res pdf format (without flattening the guide lines as part of the design).</p>
+              </div>
+
+              <div class="flex gap-1.5 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="text-[14px] leading-[19.88px] text-[#0f172a]">Please provide your artwork in CMYK.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Templates section -->
+          <div class="flex flex-col gap-3">
+            <h2 class="text-[24px] font-semibold leading-[31.68px] text-[#0f172a]">Templates</h2>
+            <div class="flex flex-col gap-6">
+
+              <!-- Single Wall Cups -->
+              <div class="flex gap-2 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flex flex-col gap-3 flex-1 min-w-0">
+                  <p class="text-[16px] font-medium leading-[22.72px] text-[#0f172a]">Single Wall Cups</p>
+                  <div class="flex flex-wrap gap-6 items-start">
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">8 Oz SW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">12 Oz SW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">16 Oz SW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Double Wall Cups -->
+              <div class="flex gap-2 items-start">
+                <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#0161a3" fill-opacity="0.4"/>
+                  <path d="M6.25 10L9.08 12.83L13.75 8" stroke="#0161a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="flex flex-col gap-3 flex-1 min-w-0">
+                  <p class="text-[16px] font-medium leading-[22.72px] text-[#0f172a]">Double Wall Cups</p>
+                  <div class="flex flex-wrap gap-6 items-start">
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">8 Oz DW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">12 Oz DW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                      <p class="text-[14px] leading-[19.88px] text-[#0f172a]">16 Oz DW</p>
+                      <a href="#" class="inline-flex items-center gap-6 bg-[#f8fafc] border border-dashed border-[#e2e8f0] rounded-full px-4 py-2 hover:bg-[#f1f5f9] transition-colors duration-150">
+                        <span class="flex items-center gap-2">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="1" width="12" height="16" rx="1.5" fill="#fee2e2"/>
+                            <path d="M10 1V6H14" stroke="#fca5a5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="3.5" y="14.5" font-family="Inter,sans-serif" font-size="4.5" font-weight="700" fill="#ef4444">.PDF</text>
+                          </svg>
+                          <span class="text-[14px] leading-[19.88px] text-[#334155] whitespace-nowrap">Download Design Template</span>
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M8 3V10.5M8 10.5L5.5 8M8 10.5L10.5 8" stroke="#334155" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 13H13" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="layout/navbar.js"></script>
+  <script src="layout/footer.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
