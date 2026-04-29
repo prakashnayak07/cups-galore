@@ -3,3 +3,4 @@ assets/css/output.css
 .DS_Store
 Thumbs.db
 *.log
+.claude
