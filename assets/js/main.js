@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Animate */
     requestAnimationFrame(() => {
       cartBackdrop.style.opacity = '1';
-      cartPanel.style.transform  = 'translateX(0)';
+      cartPanel.style.translate  = '0 0';
     });
     updateBodyScroll();
   }
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cartOverlay || !cartOpen) return;
     cartOpen = false;
     cartBackdrop.style.opacity = '0';
-    cartPanel.style.transform  = 'translateX(100%)';
+    cartPanel.style.translate  = '100% 0';
     cartOverlay.setAttribute('aria-hidden', 'true');
     /* Re-enable pointer-events after transition */
     cartPanel.addEventListener('transitionend', () => {
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileCatOverlay.setAttribute('aria-hidden', 'false');
     requestAnimationFrame(() => {
       mobileCatBackdrop.style.opacity = '1';
-      mobileCatPanel.style.transform  = 'translateY(0)';
+      mobileCatPanel.style.translate  = '0 0';
     });
     updateBodyScroll();
   }
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mobileCatOverlay || !mobileCatOpen) return;
     mobileCatOpen = false;
     mobileCatBackdrop.style.opacity = '0';
-    mobileCatPanel.style.transform  = 'translateY(100%)';
+    mobileCatPanel.style.translate  = '0 100%';
     mobileCatOverlay.setAttribute('aria-hidden', 'true');
     mobileCatPanel.addEventListener('transitionend', () => {
       if (!mobileCatOpen) mobileCatOverlay.classList.add('pointer-events-none');

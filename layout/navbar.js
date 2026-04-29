@@ -414,7 +414,7 @@ document.body.insertAdjacentHTML('beforeend', `
     <!-- Sliding panel + close button -->
     <div id="mobile-cat-panel"
          class="relative z-10 w-full flex flex-col items-center gap-3 translate-y-full"
-         style="transition: transform 0.35s ease-in-out;">
+         style="transition: transform 0.35s ease-in-out, translate 0.35s ease-in-out;">
       ${closeBtn('mobile-cat-close', '')}
       <div class="bg-white border border-[#f1f5f9] rounded-tl-[24px] rounded-tr-[24px] w-full pt-6 pb-[42px] px-4 shadow-[0px_45px_22.5px_rgba(0,0,0,0.11),0px_11px_12.5px_rgba(0,0,0,0.13)]">
         <div class="flex flex-wrap gap-4 items-start justify-center">
