@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Site Name</title>
-  <meta name="description" content="" />
+  <title>Contact Us | Cups Galore</title>
+  <meta name="description" content="Get in touch with Cups Galore. Contact us for sales inquiries, custom quotes, or general support." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://yourdomain.com/contact.html" />
-  <meta property="og:title"       content="Contact | Site Name" />
-  <meta property="og:description" content="" />
+  <meta property="og:title"       content="Contact Us | Cups Galore" />
+  <meta property="og:description" content="Get in touch with Cups Galore for sales inquiries, custom quotes, or general support." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://yourdomain.com/contact.html" />
   <meta property="og:image"       content="https://yourdomain.com/assets/images/og-image.jpg" />
@@ -28,7 +29,208 @@
   <header></header>
 
   <main class="flex-1">
-    Contact
+
+    <!-- ── Hero: Breadcrumb + Page Title ───────────────────────── -->
+    <div class="border-b border-[#e2e8f0] flex justify-center">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-[42px] flex flex-col gap-3 items-start">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2" aria-label="Breadcrumb">
+          <a href="index.html" class="text-[12px] leading-[17.04px] text-[#1e293b] underline">Home</a>
+          <span class="text-[12px] font-light leading-[17.04px] text-[#1e293b]">/</span>
+          <span class="text-[12px] font-semibold leading-[17.04px] text-[#1e293b] underline">Contact Us</span>
+        </nav>
+
+        <!-- Title -->
+        <h1 class="text-[32px] xl:text-[44px] font-bold leading-[42.24px] xl:leading-[58.08px] text-[#1e293b]">
+          Contact Us
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-[14px] text-black leading-[19.88px] w-full xl:max-w-[594px]">
+          Leave us a message and we'll reply as soon as possible. We're happy to answer any order questions and general inquiries.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- ── Main Content ──────────────────────────────────────────── -->
+    <div class="bg-[#f8fafc] pb-[60px] xl:pb-[100px] flex justify-center">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+
+        <div class="flex flex-col xl:flex-row xl:justify-between">
+
+          <!-- ── Left Column ──────────────────────────────────────── -->
+          <div class="w-full xl:flex-1 xl:max-w-[620px]">
+
+            <!-- Sales & Custom Quotes -->
+            <div class="border-b border-[#e2e8f0] py-[42px] flex flex-col gap-3">
+              <h2 class="text-[24px] xl:text-[32px] font-medium leading-[31.68px] xl:leading-[42.24px] text-[#0f172a]">
+                Sales &amp; Custom Quotes
+              </h2>
+              <div class="text-[14px] text-[#334155] leading-[19.88px] xl:max-w-[528px] space-y-[19.88px]">
+                <p>If you're ready to get a quote and have the details of your requirements ready, we recommend sending us a brief.</p>
+                <p>If you have a general question around capabilities, feel free to call or send a message below.</p>
+              </div>
+              <div class="flex items-center gap-3 text-[20px] leading-[26.4px] flex-wrap">
+                <span class="font-medium text-[#0f172a]">Support &amp; Sales:</span>
+                <a href="tel:0296032588" class="font-semibold text-[#0161a3] hover:underline transition-colors duration-150">
+                  02 9603 2588
+                </a>
+              </div>
+            </div>
+
+            <!-- Send Message Form -->
+            <div class="py-[42px] flex flex-col gap-3">
+              <h2 class="text-[24px] xl:text-[32px] font-bold leading-[31.68px] xl:leading-[42.24px] text-[#0f172a]">
+                Send Message us
+              </h2>
+              <p class="text-[14px] text-[#334155] leading-[19.88px] xl:max-w-[528px]">
+                We usually respond in 12-24 hours. For urgent queries, call us 0296032588 or email us at Sales@cupsgalore.com.au
+              </p>
+
+              <form class="flex flex-col gap-6 mt-3" novalidate>
+
+                <!-- Form Fields -->
+                <div class="flex flex-col gap-6">
+
+                  <!-- Full Name -->
+                  <div class="flex flex-col gap-[11px]">
+                    <label for="contact-name" class="text-[14px] font-medium text-[#334155] leading-[19.88px]">
+                      Full Name
+                    </label>
+                    <div class="border-b border-[#e2e8f0] h-[36px] flex items-center px-2 transition-colors duration-200 focus-within:border-[#065386]">
+                      <input
+                        id="contact-name"
+                        type="text"
+                        name="name"
+                        placeholder="Enter your full name"
+                        class="flex-1 text-[14px] leading-[19.88px] text-[#0f172a] bg-transparent outline-none placeholder:text-[#94a3b8]" />
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="flex flex-col gap-[11px]">
+                    <label for="contact-email" class="text-[14px] text-[#334155] leading-[19.88px]">
+                      Email
+                    </label>
+                    <div class="border-b border-[#e2e8f0] h-[36px] flex items-center px-2 transition-colors duration-200 focus-within:border-[#065386]">
+                      <input
+                        id="contact-email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        class="flex-1 text-[14px] leading-[19.88px] text-[#0f172a] bg-transparent outline-none placeholder:text-[#94a3b8]" />
+                    </div>
+                  </div>
+
+                  <!-- Company Name -->
+                  <div class="flex flex-col gap-[11px]">
+                    <label for="contact-company" class="text-[14px] text-[#334155] leading-[19.88px]">
+                      Company name
+                    </label>
+                    <div class="border-b border-[#e2e8f0] h-[36px] flex items-center px-2 transition-colors duration-200 focus-within:border-[#065386]">
+                      <input
+                        id="contact-company"
+                        type="text"
+                        name="company"
+                        placeholder="Enter your company name"
+                        class="flex-1 text-[14px] leading-[19.88px] text-[#0f172a] bg-transparent outline-none placeholder:text-[#94a3b8]" />
+                    </div>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="flex flex-col gap-[11px]">
+                    <label for="contact-message" class="text-[14px] text-[#334155] leading-[19.88px]">
+                      Message
+                    </label>
+                    <div class="border-b border-[#e2e8f0] min-h-[105px] flex items-start px-2 py-2 transition-colors duration-200 focus-within:border-[#065386]">
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        placeholder="Enter Message here..."
+                        rows="4"
+                        class="flex-1 text-[14px] leading-[19.88px] text-[#0f172a] bg-transparent outline-none resize-none placeholder:text-[#94a3b8] w-full"></textarea>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Urgent Inquiry Checkbox -->
+                <div class="flex items-center gap-3">
+                  <input
+                    id="contact-urgent"
+                    type="checkbox"
+                    name="urgent"
+                    class="w-4 h-4 rounded border border-[#b4b5b9] cursor-pointer accent-[#065386] shrink-0" />
+                  <label for="contact-urgent" class="text-[14px] font-medium text-[#1e293b] leading-[19.88px] cursor-pointer whitespace-nowrap">
+                    Is the Message Urgent Inquiry?
+                  </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                  <button
+                    type="submit"
+                    class="inline-flex items-center gap-[10px] bg-[#065386] rounded-full pl-4 pr-1 py-1 text-white text-[16px] font-medium leading-[22.72px] hover:bg-[#054370] transition-colors duration-200">
+                    Message Now
+                    <span class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/20 shrink-0">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+
+          <!-- ── Right Column ─────────────────────────────────────── -->
+          <div class="w-full xl:w-[720px] xl:shrink-0 xl:flex xl:flex-col xl:gap-8 xl:pt-[42px] xl:self-stretch">
+
+            <!-- Google Maps Iframe -->
+            <div class="relative h-[243px] xl:flex-1 xl:min-h-[420px] overflow-hidden mt-8 xl:mt-0">
+              <iframe
+                src="https://maps.google.com/maps?q=6%2F8+Priddle+Street%2C+Warwick+Farm+NSW+2170%2C+Australia&output=embed&z=15"
+                class="absolute inset-0 w-full h-full border-0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Cups Galore – 6/8 Priddle Street, Warwick Farm NSW 2170">
+              </iframe>
+            </div>
+
+            <!-- Company Info -->
+            <div class="flex flex-col gap-4 xl:shrink-0 mt-8 xl:mt-0">
+
+              <!-- Address Block -->
+              <div class="flex flex-col gap-1 text-[16px] leading-[22.72px] text-[#0f172a]">
+                <p class="font-medium">Cup Galore Pvt .Ltd</p>
+                <p class="font-normal">6/8 Priddle Street, Warwick Farm NSW 2170</p>
+                <p class="font-normal">02 9603 2588</p>
+              </div>
+
+              <!-- Divider -->
+              <hr class="border-0 border-t border-[#e2e8f0]" />
+
+              <!-- Emergency Contact -->
+              <div class="flex flex-col gap-1">
+                <p class="text-[14px] text-[#0f172a] leading-[19.88px]">Emergency Contact</p>
+                <p class="text-[16px] font-semibold text-[#334155] leading-[22.72px]">
+                  sales@cupsgalore.com.au
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer></footer>
@@ -38,4 +240,5 @@
   <script src="layout/footer.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
