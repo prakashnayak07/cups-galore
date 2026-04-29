@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Cups Galore</title>
+  <meta name="description" content="The page you're looking for doesn't exist." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/output.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <header></header>
+
+  <main class="flex-1 flex items-center justify-center bg-[#f8fafc]">
+    <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-20 flex flex-col items-center text-center gap-8">
+
+      <!-- 404 Number -->
+      <div class="relative select-none">
+        <p class="text-[160px] sm:text-[220px] lg:text-[280px] font-bold leading-none text-[#e2e8f0] tracking-tighter">404</p>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img src="assets/images/cups-galore-logo.png" alt="" class="h-16 sm:h-20 w-auto object-contain opacity-30" aria-hidden="true">
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="flex flex-col gap-3 max-w-[480px]">
+        <h1 class="text-[28px] sm:text-[36px] font-bold text-[#0f172a] leading-tight">
+          Oops! Page not found.
+        </h1>
+        <p class="text-[16px] text-[#475569] leading-relaxed">
+          The page you're looking for has been moved, deleted, or never existed. Let's get you back on track.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+
+        <a href="index.html"
+           class="inline-flex items-center gap-2.5 bg-[#065386] rounded-full pl-5 pr-2 py-2 text-white text-[15px] font-medium hover:bg-[#054370] transition-colors duration-200">
+          Back to Home
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-white/20 shrink-0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="contact.html"
+           class="inline-flex items-center gap-2 px-6 py-[11px] rounded-full border border-[#e2e8f0] text-[15px] font-medium text-[#334155] hover:border-[#94a3b8] hover:text-[#0f172a] transition-colors duration-200">
+          Contact Support
+        </a>
+
+      </div>
+
+      <!-- Quick links -->
+      <div class="flex flex-col items-center gap-3 pt-4 border-t border-[#e2e8f0] w-full max-w-[480px]">
+        <p class="text-[13px] text-[#94a3b8] uppercase tracking-wider font-medium">Or browse</p>
+        <div class="flex flex-wrap items-center justify-center gap-1">
+          <a href="index.html"   class="px-3 py-1.5 text-[14px] text-[#475569] hover:text-[#065386] transition-colors duration-150">Home</a>
+          <span class="text-[#e2e8f0]">·</span>
+          <a href="about.html"  class="px-3 py-1.5 text-[14px] text-[#475569] hover:text-[#065386] transition-colors duration-150">About Us</a>
+          <span class="text-[#e2e8f0]">·</span>
+          <a href="#"           class="px-3 py-1.5 text-[14px] text-[#475569] hover:text-[#065386] transition-colors duration-150">Shop</a>
+          <span class="text-[#e2e8f0]">·</span>
+          <a href="contact.html" class="px-3 py-1.5 text-[14px] text-[#475569] hover:text-[#065386] transition-colors duration-150">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="layout/navbar.js"></script>
+  <script src="layout/footer.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

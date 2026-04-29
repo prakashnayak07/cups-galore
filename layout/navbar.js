@@ -175,22 +175,23 @@ document.querySelector('header').innerHTML = `
 
         <!-- Nav links centered -->
         <div class="flex flex-1 items-center justify-center gap-8">
-          <div class="flex flex-col h-[52px] justify-center border-t-2 border-[#065386]">
-            <a href="index.html" class="text-[14px] font-medium text-[#0f172a] leading-[19.88px] whitespace-nowrap">Home</a>
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="index.html">
+            <a href="index.html" class="text-[14px] font-medium text-[#334155] leading-[19.88px] whitespace-nowrap">Home</a>
           </div>
-          <div class="flex flex-col h-[52px] justify-center">
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="about.html">
             <a href="about.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">About Us</a>
           </div>
-          <div class="flex flex-col h-[52px] justify-center">
+           
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="shops.html">
             <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Shops</a>
           </div>
-          <div class="flex flex-col h-[52px] justify-center">
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="blogs.html">
             <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Blogs</a>
           </div>
-          <div class="flex flex-col h-[52px] justify-center">
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="faq.html">
             <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">FAQ</a>
           </div>
-          <div class="flex flex-col h-[52px] justify-center">
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="contact.html">
             <a href="contact.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Contact Us</a>
           </div>
         </div>
@@ -224,12 +225,12 @@ document.querySelector('header').innerHTML = `
          style="max-height: 0; transition: max-height 0.35s ease-in-out;">
       <div class="px-4 pb-4">
         <div class="flex flex-col">
-          <a href="index.html"  class="flex items-center h-[52px] border-t-2 border-[#065386] text-[14px] font-medium text-[#0f172a] leading-[19.88px]">Home</a>
-          <a href="about.html" class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">About Us</a>
-          <a href="#"           class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Shops</a>
-          <a href="#"           class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Blogs</a>
-          <a href="#"           class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">FAQ</a>
-          <a href="contact.html" class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Contact Us</a>
+          <a href="index.html"   data-navlink="index.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px]">Home</a>
+          <a href="about.html"   data-navlink="about.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">About Us</a>
+          <a href="#"            data-navlink="shops.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Shops</a>
+          <a href="#"            data-navlink="blogs.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Blogs</a>
+          <a href="#"            data-navlink="faq.html"     class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">FAQ</a>
+          <a href="contact.html" data-navlink="contact.html" class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Contact Us</a>
         </div>
         <div class="flex items-center gap-[10px] py-2 pb-4">
           <img src="assets/images/nav-avatar.png" alt="" class="shrink-0 size-5 object-cover rounded-full" aria-hidden="true">
@@ -425,3 +426,29 @@ document.body.insertAdjacentHTML('beforeend', `
   </div>
 
 `);
+
+/* Active nav link — applied on every page load based on current filename */
+(() => {
+  const raw  = window.location.pathname;
+  let   slug = raw.split('/').filter(Boolean).pop() || 'index';
+  /* Strip .html if present, then re-add so both /about and /about.html → 'about.html' */
+  slug = slug.replace(/\.html$/, '');
+  const page = (slug === '' || slug === 'index') ? 'index.html' : `${slug}.html`;
+
+  document.querySelectorAll('[data-navlink]').forEach(el => {
+    if (el.dataset.navlink !== page) return;
+
+    if (el.tagName === 'DIV') {
+      /* Desktop: border on wrapper, dark text on link */
+      el.classList.add('border-t-2');
+      el.style.borderTopColor = '#065386';
+      const a = el.querySelector('a');
+      if (a) a.style.color = '#0f172a';
+    } else {
+      /* Mobile: border + dark text directly on <a> */
+      el.classList.add('border-t-2');
+      el.style.borderTopColor = '#065386';
+      el.style.color = '#0f172a';
+    }
+  });
+})();
