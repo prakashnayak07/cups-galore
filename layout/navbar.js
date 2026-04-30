@@ -186,10 +186,10 @@ document.querySelector('header').innerHTML = `
             <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Shops</a>
           </div>
           <div class="flex flex-col h-[52px] justify-center" data-navlink="blogs.html">
-            <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Blogs</a>
+            <a href="blogs.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Blogs</a>
           </div>
           <div class="flex flex-col h-[52px] justify-center" data-navlink="faq.html">
-            <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">FAQ</a>
+            <a href="faq.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">FAQ</a>
           </div>
           <div class="flex flex-col h-[52px] justify-center" data-navlink="contact.html">
             <a href="contact.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Contact Us</a>

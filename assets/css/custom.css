@@ -64,3 +64,294 @@
 .faq-chevron {
   transition: transform 250ms ease;
 }
+
+/* ── Base img override for fixed-height containers ──────────── */
+.blog-card-img-wrap img {
+  height: 100%;
+}
+
+/* ── Blog Post Card ──────────────────────────────────────────── */
+.blog-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 200ms ease;
+  text-decoration: none;
+}
+.blog-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.blog-card-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease;
+}
+.blog-card:hover .blog-card-img {
+  transform: scale(1.05);
+}
+.blog-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+.blog-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.blog-card-date {
+  font-size: 14px;
+  line-height: 19.88px;
+  color: #475569;
+}
+.blog-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.72px;
+  color: #0f172a;
+  transition: color 200ms ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card:hover .blog-card-title {
+  color: #0161a3;
+}
+.blog-card-excerpt {
+  font-size: 14px;
+  line-height: 19.88px;
+  color: #334155;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: 1px solid #0f172a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  color: #0f172a;
+  white-space: nowrap;
+  align-self: flex-end;
+  flex-shrink: 0;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.blog-read-more:hover {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+.blog-read-more:hover svg path {
+  stroke: #ffffff;
+}
+
+/* ── Blog Pagination ─────────────────────────────────────────── */
+.blog-pagination-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: 16px;
+}
+.blog-pagination-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 19.88px;
+  background: none;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  transition: color 150ms ease;
+  border-radius: 8px;
+}
+.blog-pagination-nav:hover:not(:disabled) {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+.blog-pagination-nav:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+.blog-page-nums {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.blog-page-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 19.88px;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: background-color 150ms ease, color 150ms ease;
+  color: #0f172a;
+}
+.blog-page-num.active {
+  background-color: #0161a3;
+  color: #ffffff;
+}
+.blog-page-num:not(.active):hover {
+  background-color: #f1f5f9;
+}
+
+/* ── About: Image Collage ────────────────────────────────────── */
+.about-collage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 694 / 1015;
+}
+.about-collage-mobile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 375 / 508;
+}
+.about-collage-block {
+  position: absolute;
+}
+
+/* ── About: Feature Cards Icon Container ─────────────────────── */
+.feature-icon-wrap {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── About: Features Section Decorative Ellipse ──────────────── */
+.features-section {
+  position: relative;
+  overflow: hidden;
+}
+.features-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1200px;
+  left: -600px;
+  width: 2834px;
+  height: 2834px;
+  border-radius: 50%;
+  background: rgba(219, 234, 254, 0.25);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── About: Testimonials Section ─────────────────────────────── */
+.testimonials-section {
+  background: radial-gradient(ellipse at 50% 10%, rgba(255, 243, 237, 0.85) 0%, rgba(255, 255, 255, 1) 65%);
+}
+.testimonials-rows-wrap {
+  position: relative;
+}
+.testimonials-overflow {
+  overflow: hidden;
+}
+.testimonials-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  padding: 4px 0;
+}
+
+/* Row 1: scrolls left */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* Row 2: scrolls right (reverse) */
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.testimonials-animate {
+  animation: marquee 50s linear infinite;
+}
+.testimonials-animate-reverse {
+  animation: marquee-reverse 50s linear infinite;
+}
+
+/* Pause on hover */
+.testimonials-overflow:hover .testimonials-animate,
+.testimonials-overflow:hover .testimonials-animate-reverse {
+  animation-play-state: paused;
+}
+
+/* Gradient edge fades */
+.testimonials-fade-left,
+.testimonials-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .testimonials-fade-left,
+  .testimonials-fade-right { width: 160px; }
+}
+@media (min-width: 1280px) {
+  .testimonials-fade-left,
+  .testimonials-fade-right { width: 324px; }
+}
+.testimonials-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+.testimonials-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* ── About: Testimonial Card ─────────────────────────────────── */
+.testimonial-card {
+  flex-shrink: 0;
+  width: 320px;
+  height: auto;
+  min-height: 220px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 1280px) {
+  .testimonial-card {
+    width: 472px;
+    min-height: 260px;
+  }
+}
