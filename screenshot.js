@@ -9,6 +9,14 @@ const shots = [
   { name: 'shop-1920.png', url: `${BASE_URL}/shop.html`, width: 1920, height: 1400 },
   { name: 'shop-1440.png', url: `${BASE_URL}/shop.html`, width: 1440, height: 1200 },
   { name: 'shop-390.png', url: `${BASE_URL}/shop.html`, width: 390, height: 1200 },
+  { name: 'product-detail-1920.png', url: `${BASE_URL}/product-detail.html`, width: 1920, height: 1400 },
+  { name: 'product-detail-1440.png', url: `${BASE_URL}/product-detail.html`, width: 1440, height: 1200 },
+  { name: 'product-detail-1280.png', url: `${BASE_URL}/product-detail.html`, width: 1280, height: 1200 },
+  { name: 'product-detail-768.png', url: `${BASE_URL}/product-detail.html`, width: 768, height: 1200 },
+  { name: 'product-detail-414.png', url: `${BASE_URL}/product-detail.html`, width: 414, height: 1200 },
+  { name: 'product-detail-390.png', url: `${BASE_URL}/product-detail.html`, width: 390, height: 1200 },
+  { name: 'product-detail-375.png', url: `${BASE_URL}/product-detail.html`, width: 375, height: 1200 },
+  { name: 'product-detail-320.png', url: `${BASE_URL}/product-detail.html`, width: 320, height: 1200 },
 ];
 
 (async () => {

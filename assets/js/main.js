@@ -555,7 +555,7 @@ function initShopCardFlips() {
         </div>
       </div>
       <div class="flex gap-2">
-        <button type="button" class="shop-detail-button shop-detail-button-secondary">More Info ${arrowSvg()}</button>
+        <a href="product-detail.html" class="shop-detail-button shop-detail-button-secondary">More Info ${arrowSvg()}</a>
         <button type="button" class="shop-detail-button shop-detail-button-primary">Add to Cart ${arrowSvg()}</button>
       </div>
     </div>`;
@@ -582,7 +582,7 @@ function initShopCardFlips() {
 
   cards.forEach(card => {
     card.addEventListener('click', (event) => {
-      if (event.target.closest('.shop-card-back button')) return;
+      if (event.target.closest('.shop-card-back button, .shop-card-back a')) return;
       flipCard(card, true);
     });
     card.addEventListener('keydown', (event) => {
@@ -592,6 +592,9 @@ function initShopCardFlips() {
     });
     card.querySelectorAll('.shop-card-back button').forEach(button => {
       button.addEventListener('click', event => event.stopPropagation());
+    });
+    card.querySelectorAll('.shop-card-back a').forEach(link => {
+      link.addEventListener('click', event => event.stopPropagation());
     });
     card.querySelector('.shop-card-close')?.addEventListener('click', (event) => {
       event.stopPropagation();
@@ -603,6 +606,72 @@ function initShopCardFlips() {
 if (document.getElementById('shop-grid')) {
   initShopCardFlips();
 }
+
+function initProductDetailPage() {
+  const detail = document.querySelector('[data-product-detail]');
+  if (!detail) return;
+
+  document.querySelectorAll('[data-product-thumb]').forEach(button => {
+    button.addEventListener('click', () => {
+      const image = document.getElementById('product-main-image');
+      if (!image) return;
+      image.src = button.dataset.productThumb;
+      document.querySelectorAll('[data-product-thumb]').forEach(item => {
+        item.classList.toggle('is-active', item === button);
+        item.classList.toggle('border-[#7ccdfd]', item === button);
+        item.classList.toggle('border-[#e2e8f0]', item !== button);
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-option-group]').forEach(group => {
+    group.querySelectorAll('[data-option-button]').forEach(button => {
+      button.addEventListener('click', () => {
+        group.querySelectorAll('[data-option-button]').forEach(item => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-product-tab]').forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.dataset.productTab;
+      document.querySelectorAll('[data-product-tab]').forEach(item => item.classList.toggle('is-active', item === button));
+      document.querySelectorAll('[data-product-panel]').forEach(panel => {
+        panel.classList.toggle('is-active', panel.dataset.productPanel === target);
+      });
+    });
+  });
+
+  const relatedSlider = document.querySelector('.product-related-swiper');
+  if (relatedSlider && typeof Swiper !== 'undefined') {
+    new Swiper(relatedSlider, {
+      slidesPerView: 1.25,
+      spaceBetween: 16,
+      grabCursor: true,
+      watchOverflow: true,
+      breakpoints: {
+        390: { slidesPerView: 1.55, spaceBetween: 16 },
+        640: { slidesPerView: 2.2, spaceBetween: 18 },
+        1024: { slidesPerView: 3.35, spaceBetween: 0 },
+        1280: { slidesPerView: 4.5, spaceBetween: 0 },
+        1536: { slidesPerView: 4.5, spaceBetween: 0 },
+      },
+    });
+  }
+
+  document.querySelectorAll('[data-quantity-control]').forEach(control => {
+    const value = control.querySelector('[data-qty-value]');
+    control.querySelector('[data-qty-minus]')?.addEventListener('click', () => {
+      value.textContent = String(Math.max(1, Number(value.textContent) - 1));
+    });
+    control.querySelector('[data-qty-plus]')?.addEventListener('click', () => {
+      value.textContent = String(Number(value.textContent) + 1);
+    });
+  });
+}
+
+initProductDetailPage();
 
 /* ── Testimonial Marquee ──────────────────────────────────────────── */
 function initTestimonialMarquee() {

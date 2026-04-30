@@ -235,6 +235,68 @@
   background: #0161a3;
   color: #ffffff;
 }
+.product-tab {
+  border: 0;
+  border-radius: 999px;
+  color: #516278;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.72px;
+  min-height: 46px;
+  padding: 12px 16px;
+}
+.product-tab.is-active {
+  background: #f6f7f9;
+  color: #383b43;
+}
+.product-tab-panel {
+  display: none;
+}
+.product-tab-panel.is-active {
+  display: block;
+}
+.product-related-card {
+  border: 1px solid #f1f5f9;
+  border-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 384px;
+  padding: 42px 24px 24px;
+  text-align: left;
+  transition: border-color 180ms ease;
+}
+.product-related-card:hover {
+  border-color: #7ccdfd;
+}
+.product-offer-ticket {
+  background: #fff1f2;
+  color: #891319;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.88px;
+  padding: 4px 20px;
+  position: relative;
+}
+.product-offer-ticket::before,
+.product-offer-ticket::after {
+  background: #ffffff;
+  border-radius: 999px;
+  content: "";
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+}
+.product-offer-ticket::before {
+  left: -6px;
+}
+.product-offer-ticket::after {
+  right: -6px;
+}
 .shop-filter-check {
   width: 16px;
   height: 16px;
