@@ -160,23 +160,29 @@ if (document.getElementById('logo-marquee-track')) {
 
 /* ── Insights & Inspiration Swiper ──────────────────────────────── */
 function initInsightsSwiper() {
-  if (!document.querySelector('.insights-swiper')) return;
+  const slider = document.querySelector('.insights-swiper');
+  if (!slider || typeof Swiper === 'undefined') return;
 
-  const swiper = new Swiper('.insights-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 24,
+  const swiper = new Swiper(slider, {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
     grabCursor: true,
+    watchOverflow: true,
     breakpoints: {
-      640:  { slidesPerView: 2, spaceBetween: 24 },
-      1024: { slidesPerView: 3, spaceBetween: 32 },
-      1280: { slidesPerView: 4, spaceBetween: 42 },
+      768:  { slidesPerView: 2, spaceBetween: 24 },
+      1024: { slidesPerView: 3.25, spaceBetween: 32 },
+      1280: { slidesPerView: 3.25, spaceBetween: 42 },
     },
   });
 
   const prevBtn = document.getElementById('insights-prev');
   const nextBtn = document.getElementById('insights-next');
+  const mobilePrevBtn = document.getElementById('insights-mobile-prev');
+  const mobileNextBtn = document.getElementById('insights-mobile-next');
   if (prevBtn) prevBtn.addEventListener('click', () => swiper.slidePrev());
   if (nextBtn) nextBtn.addEventListener('click', () => swiper.slideNext());
+  if (mobilePrevBtn) mobilePrevBtn.addEventListener('click', () => swiper.slidePrev());
+  if (mobileNextBtn) mobileNextBtn.addEventListener('click', () => swiper.slideNext());
 }
 
 if (document.querySelector('.insights-swiper')) {

@@ -924,13 +924,13 @@
     <!-- ═══════════════════════════════════════════════════════════
          SECTION 8 · INSIGHTS & INSPIRATION (Swiper)
          ═══════════════════════════════════════════════════════════ -->
-    <section class="w-full py-16 lg:py-[120px]">
+    <section class="w-full py-[60px] lg:py-[120px] overflow-hidden">
       <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
         <!-- Header row -->
-        <div class="flex items-end justify-between gap-4 mb-8 lg:mb-[42px]">
-          <div class="flex flex-col gap-3 flex-1 min-w-0">
-            <h2 class="font-bold text-[#0f172a] text-3xl lg:text-[44px] leading-[1.32] lg:leading-[58px]">
+        <div class="flex items-end justify-center lg:justify-between gap-4 mb-10 lg:mb-[42px]">
+          <div class="flex flex-col gap-3 flex-1 min-w-0 items-center text-center lg:items-start lg:text-left">
+            <h2 class="font-bold text-[#0f172a] text-[32px] md:text-4xl lg:text-[44px] leading-[42.24px] md:leading-[1.32] lg:leading-[58px]">
               Insights &amp; Inspiration
             </h2>
             <p class="text-[#334155] text-base leading-[22.72px] max-w-[706px]">
@@ -938,7 +938,7 @@
             </p>
           </div>
           <!-- Nav buttons -->
-          <div class="flex items-center gap-3 flex-shrink-0">
+          <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
             <button id="insights-prev" aria-label="Previous"
               class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#f1f5f9] border border-[#e2e8f0] hover:bg-[#e2e8f0] transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -959,14 +959,14 @@
         </div>
 
         <!-- Swiper -->
-        <div class="swiper insights-swiper overflow-hidden">
+        <div class="swiper insights-swiper overflow-visible">
           <div class="swiper-wrapper">
 
             <!-- Slide 1 -->
             <div class="swiper-slide">
               <article class="flex flex-col gap-5">
                 <a href="/blog/design-cup-customers-remember"
-                  class="block relative h-[240px] overflow-hidden rounded-2xl">
+                  class="block relative h-[240px] overflow-hidden">
                   <img src="assets/images/home/6b77aac1e46ccc1ef32b81e2df592f9974a43e61.png"
                     alt="How to Design a Cup Customers Remember"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -979,9 +979,13 @@
                     and print finishes to create brand recall with every sip.</p>
                 </div>
                 <a href="/blog/design-cup-customers-remember"
-                  class="flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] px-4 py-2.5 rounded-full border border-[#0f172a] self-end hover:bg-[#0f172a] hover:text-white transition-colors">
+                  class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end hover:text-[#065386] transition-colors">
                   Read More
-                  <img src="assets/images/home/b2423c3a7331b13033177e07d80a7f34409f3b74.svg" alt="" class="w-4 h-4" />
+                  <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                 </a>
               </article>
             </div>
@@ -990,7 +994,7 @@
             <div class="swiper-slide">
               <article class="flex flex-col gap-5">
                 <a href="/blog/interactive-prototypes-user-testing"
-                  class="block relative h-[240px] overflow-hidden rounded-2xl">
+                  class="block relative h-[240px] overflow-hidden">
                   <img src="assets/images/home/35b9cba56dce4dbe0845ddf8a1c2119672a2fd03.png"
                     alt="Creating Interactive Prototypes for User Testing"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -1003,9 +1007,13 @@
                     effective prototypes that engage users and elicit valuable feedback during the design process.</p>
                 </div>
                 <a href="/blog/interactive-prototypes-user-testing"
-                  class="flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] px-4 py-2.5 rounded-full border border-[#0f172a] self-end hover:bg-[#0f172a] hover:text-white transition-colors">
+                  class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end hover:text-[#065386] transition-colors">
                   Read More
-                  <img src="assets/images/home/b2423c3a7331b13033177e07d80a7f34409f3b74.svg" alt="" class="w-4 h-4" />
+                  <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                 </a>
               </article>
             </div>
@@ -1014,7 +1022,7 @@
             <div class="swiper-slide">
               <article class="flex flex-col gap-5">
                 <a href="/blog/psychology-of-color-branding"
-                  class="block relative h-[240px] overflow-hidden rounded-2xl">
+                  class="block relative h-[240px] overflow-hidden">
                   <img src="assets/images/home/13727f61b8b985e8e1d525af815a17eed2fe6e77.png"
                     alt="The Psychology of Color in Branding"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -1028,9 +1036,13 @@
                   </p>
                 </div>
                 <a href="/blog/psychology-of-color-branding"
-                  class="flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] px-4 py-2.5 rounded-full border border-[#0f172a] self-end hover:bg-[#0f172a] hover:text-white transition-colors">
+                  class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end hover:text-[#065386] transition-colors">
                   Read More
-                  <img src="assets/images/home/b2423c3a7331b13033177e07d80a7f34409f3b74.svg" alt="" class="w-4 h-4" />
+                  <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                 </a>
               </article>
             </div>
@@ -1039,7 +1051,7 @@
             <div class="swiper-slide">
               <article class="flex flex-col gap-5">
                 <a href="/blog/understanding-ux-principles"
-                  class="block relative h-[240px] overflow-hidden rounded-2xl">
+                  class="block relative h-[240px] overflow-hidden">
                   <img src="assets/images/home/35b9cba56dce4dbe0845ddf8a1c2119672a2fd03.png"
                     alt="Understanding User Experience Principles"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -1053,14 +1065,37 @@
                     audience.</p>
                 </div>
                 <a href="/blog/understanding-ux-principles"
-                  class="flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] px-4 py-2.5 rounded-full border border-[#0f172a] self-end hover:bg-[#0f172a] hover:text-white transition-colors">
+                  class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end hover:text-[#065386] transition-colors">
                   Read More
-                  <img src="assets/images/home/b2423c3a7331b13033177e07d80a7f34409f3b74.svg" alt="" class="w-4 h-4" />
+                  <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                 </a>
               </article>
             </div>
 
           </div>
+        </div>
+
+        <div class="flex lg:hidden items-center justify-center gap-3 mt-8">
+          <button id="insights-mobile-prev" aria-label="Previous"
+            class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#f1f5f9] border border-[#e2e8f0] hover:bg-[#e2e8f0] transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M15 18L9 12L15 6" stroke="#334155" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button id="insights-mobile-next" aria-label="Next"
+            class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#f1f5f9] border border-[#e2e8f0] hover:bg-[#e2e8f0] transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M9 18L15 12L9 6" stroke="#334155" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
 
       </div>
