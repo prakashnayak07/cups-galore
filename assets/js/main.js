@@ -146,6 +146,43 @@ if (document.getElementById('blog-posts-grid')) {
   renderBlogPagination(blogCurrentPage);
 }
 
+/* ── Logo Marquee ────────────────────────────────────────────────── */
+function initLogoMarquee() {
+  const track = document.getElementById('logo-marquee-track');
+  if (!track) return;
+  /* CSS animation handles the infinite scroll — JS just ensures it starts */
+  track.style.animationPlayState = 'running';
+}
+
+if (document.getElementById('logo-marquee-track')) {
+  initLogoMarquee();
+}
+
+/* ── Insights & Inspiration Swiper ──────────────────────────────── */
+function initInsightsSwiper() {
+  if (!document.querySelector('.insights-swiper')) return;
+
+  const swiper = new Swiper('.insights-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    grabCursor: true,
+    breakpoints: {
+      640:  { slidesPerView: 2, spaceBetween: 24 },
+      1024: { slidesPerView: 3, spaceBetween: 32 },
+      1280: { slidesPerView: 4, spaceBetween: 42 },
+    },
+  });
+
+  const prevBtn = document.getElementById('insights-prev');
+  const nextBtn = document.getElementById('insights-next');
+  if (prevBtn) prevBtn.addEventListener('click', () => swiper.slidePrev());
+  if (nextBtn) nextBtn.addEventListener('click', () => swiper.slideNext());
+}
+
+if (document.querySelector('.insights-swiper')) {
+  initInsightsSwiper();
+}
+
 /* ── Testimonial Marquee ──────────────────────────────────────────── */
 function initTestimonialMarquee() {
   const row1 = document.getElementById('testimonials-row-1');
