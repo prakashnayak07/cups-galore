@@ -182,8 +182,8 @@ document.querySelector('header').innerHTML = `
             <a href="about.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">About Us</a>
           </div>
            
-          <div class="flex flex-col h-[52px] justify-center" data-navlink="shops.html">
-            <a href="#" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Shops</a>
+          <div class="flex flex-col h-[52px] justify-center" data-navlink="shop.html">
+            <a href="shop.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Shops</a>
           </div>
           <div class="flex flex-col h-[52px] justify-center" data-navlink="blogs.html">
             <a href="blogs.html" class="text-[14px] font-medium text-[#334155] hover:text-[#065386] leading-[19.88px] whitespace-nowrap transition-colors duration-150">Blogs</a>
@@ -227,7 +227,7 @@ document.querySelector('header').innerHTML = `
         <div class="flex flex-col">
           <a href="index.html"   data-navlink="index.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px]">Home</a>
           <a href="about.html"   data-navlink="about.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">About Us</a>
-          <a href="#"            data-navlink="shops.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Shops</a>
+          <a href="shop.html"    data-navlink="shop.html"    class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Shops</a>
           <a href="#"            data-navlink="blogs.html"   class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Blogs</a>
           <a href="#"            data-navlink="faq.html"     class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">FAQ</a>
           <a href="contact.html" data-navlink="contact.html" class="flex items-center h-[52px] text-[14px] font-medium text-[#334155] leading-[19.88px] hover:text-[#065386] transition-colors duration-150">Contact Us</a>

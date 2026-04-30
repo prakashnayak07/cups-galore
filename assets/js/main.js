@@ -217,6 +217,393 @@ if (document.querySelector('.home-photo-swiper')) {
   initHomePhotoSwiper();
 }
 
+/* ── Shop Filters ────────────────────────────────────────────────── */
+const shopFilterGroups = [
+  {
+    key: 'category',
+    label: 'Category',
+    open: true,
+    options: [
+      { label: 'All', value: 'all' },
+      { label: 'Branded & Custom Cups', value: 'branded' },
+      { label: 'Ready Design', value: 'ready-design' },
+      { label: 'Reusable Cups', value: 'reusable' },
+      { label: 'Plains Cup', value: 'plain' },
+      { label: 'Packaging', value: 'packaging' },
+    ],
+  },
+  {
+    key: 'availability',
+    label: 'Availability',
+    options: [
+      { label: 'In stock', value: 'in-stock' },
+      { label: 'Out of stock', value: 'out-of-stock' },
+    ],
+  },
+  {
+    key: 'sort',
+    label: 'Sort By',
+    options: [
+      { label: 'Price: Low to High', value: 'price-asc' },
+      { label: 'Price: High to Low', value: 'price-desc' },
+    ],
+  },
+  {
+    key: 'size',
+    label: 'Size (oz)',
+    options: [
+      { label: '8 oz', value: '8' },
+      { label: '12 oz', value: '12' },
+      { label: '16 oz', value: '16' },
+    ],
+  },
+  {
+    key: 'price',
+    label: 'Price',
+    options: [
+      { label: 'Under $1', value: 'under-1' },
+      { label: '$1 - $10', value: '1-10' },
+      { label: '$10+', value: '10-plus' },
+    ],
+  },
+  {
+    key: 'wall',
+    label: 'Cup Wall',
+    options: [
+      { label: 'Single Wall', value: 'single' },
+      { label: 'Double Wall', value: 'double' },
+    ],
+  },
+  {
+    key: 'lid',
+    label: 'Cup Lid',
+    options: [
+      { label: 'No Lids', value: 'none' },
+      { label: 'Lids Optional', value: 'optional' },
+    ],
+  },
+  {
+    key: 'design',
+    label: 'Design',
+    options: [
+      { label: 'Custom', value: 'custom' },
+      { label: 'Ready Design', value: 'ready' },
+      { label: 'Plain', value: 'plain' },
+    ],
+  },
+  {
+    key: 'color',
+    label: 'Color',
+    options: [
+      { label: 'Multi', value: 'multi' },
+      { label: 'White', value: 'white' },
+    ],
+  },
+];
+
+function initShopFilters() {
+  const panels = document.querySelectorAll('[data-shop-filter-panel]');
+  const grid = document.getElementById('shop-grid');
+  if (!panels.length || !grid) return;
+
+  function panelMarkup() {
+    return shopFilterGroups.map((group) => {
+      const expanded = group.open ? 'true' : 'false';
+      const options = group.options.map((option) => {
+        const checked = option.value === 'all' ? 'checked' : '';
+        return `<label class="shop-filter-option flex items-center gap-3 text-sm font-medium leading-[19.88px] text-[#1e293b] cursor-pointer">
+          <input class="sr-only" type="checkbox" name="${group.key}" value="${option.value}" ${checked}>
+          <span class="shop-filter-check"><img src="assets/icons/shop/icon-check.svg" alt="" aria-hidden="true"></span>
+          <span>${option.label}</span>
+        </label>`;
+      }).join('');
+
+      return `<div class="border-b border-[#e2e8f0]">
+        <button type="button" class="shop-filter-trigger flex w-full items-center justify-between gap-4 px-2 py-4 text-left"
+          aria-expanded="${expanded}" data-filter-trigger="${group.key}">
+          <span class="text-sm leading-[19.88px] text-[#334155]">${group.label}</span>
+          <svg class="shop-filter-chevron size-4 transition-transform text-[#334155]" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="shop-filter-content bg-[#f8fafc] flex flex-col gap-4 px-2 py-4" data-filter-content="${group.key}" ${group.open ? '' : 'hidden'}>
+          ${options}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  panels.forEach(panel => {
+    panel.innerHTML = panelMarkup();
+  });
+
+  const cards = Array.from(grid.querySelectorAll('.shop-product-card'));
+  const resultCount = document.getElementById('shop-result-count');
+  const filterCounts = document.querySelectorAll('.shop-filter-count');
+
+  function getSelected() {
+    const selected = {};
+    shopFilterGroups.forEach(group => {
+      selected[group.key] = [...new Set(Array.from(document.querySelectorAll(`input[name="${group.key}"]:checked`)).map(input => input.value))];
+    });
+    return selected;
+  }
+
+  function priceMatches(price, ranges) {
+    if (!ranges.length) return true;
+    return ranges.some(range => {
+      if (range === 'under-1') return price < 1;
+      if (range === '1-10') return price >= 1 && price <= 10;
+      if (range === '10-plus') return price > 10;
+      return true;
+    });
+  }
+
+  function cardMatches(card, selected) {
+    return shopFilterGroups.every(group => {
+      const values = selected[group.key].filter(value => value !== 'all');
+      if (!values.length || group.key === 'sort') return true;
+      if (group.key === 'price') return priceMatches(Number(card.dataset.price), values);
+      return values.includes(card.dataset[group.key]);
+    });
+  }
+
+  function activeFilterCount(selected) {
+    return Object.entries(selected).reduce((total, [key, values]) => {
+      if (key === 'sort') return total;
+      return total + values.filter(value => value !== 'all').length;
+    }, 0);
+  }
+
+  function sortCards(selected) {
+    const sortValue = selected.sort[0];
+    if (!sortValue) return;
+    const sorted = [...cards].sort((a, b) => {
+      const diff = Number(a.dataset.price) - Number(b.dataset.price);
+      return sortValue === 'price-desc' ? -diff : diff;
+    });
+    sorted.forEach(card => grid.appendChild(card));
+  }
+
+  function syncMirroredInputs(source) {
+    document.querySelectorAll(`input[name="${source.name}"][value="${source.value}"]`).forEach(input => {
+      if (input !== source) input.checked = source.checked;
+    });
+  }
+
+  function applyFilters() {
+    const selected = getSelected();
+    sortCards(selected);
+    let visible = 0;
+    cards.forEach(card => {
+      const show = cardMatches(card, selected);
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (resultCount) resultCount.textContent = `${visible} product${visible === 1 ? '' : 's'}`;
+    filterCounts.forEach(count => {
+      count.textContent = activeFilterCount(selected);
+    });
+  }
+
+  document.querySelectorAll('.shop-filter-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.parentElement.querySelector('.shop-filter-content');
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      content.hidden = expanded;
+    });
+  });
+
+  document.querySelectorAll('[data-shop-filter-panel] input').forEach(input => {
+    input.addEventListener('change', () => {
+      if (input.name === 'category' && input.value === 'all' && input.checked) {
+        document.querySelectorAll('input[name="category"]').forEach(categoryInput => {
+          if (categoryInput.value !== 'all') categoryInput.checked = false;
+        });
+      }
+      if (input.name === 'category' && input.value !== 'all' && input.checked) {
+        document.querySelectorAll('input[name="category"][value="all"]').forEach(allInput => {
+          allInput.checked = false;
+        });
+      }
+      if (input.name === 'sort' && input.checked) {
+        document.querySelectorAll(`input[name="sort"]`).forEach(sortInput => {
+          if (sortInput.value !== input.value) sortInput.checked = false;
+        });
+      }
+      syncMirroredInputs(input);
+      applyFilters();
+    });
+  });
+
+  const openButton = document.getElementById('shop-filter-open');
+  const closeButton = document.getElementById('shop-filter-close');
+  const backdrop = document.getElementById('shop-filter-backdrop');
+
+  function openDrawer() {
+    document.body.classList.add('shop-filter-open');
+    document.getElementById('shop-filter-overlay')?.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    document.body.classList.remove('shop-filter-open');
+    document.getElementById('shop-filter-overlay')?.setAttribute('aria-hidden', 'true');
+  }
+
+  if (openButton) openButton.addEventListener('click', openDrawer);
+  if (closeButton) closeButton.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  applyFilters();
+}
+
+if (document.getElementById('shop-grid')) {
+  initShopFilters();
+}
+
+function initShopCardFlips() {
+  const cards = document.querySelectorAll('.shop-product-card');
+  if (!cards.length) return;
+
+  function arrowSvg() {
+    return `<svg class="size-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+  }
+
+  function deliveryIcon(src, label) {
+    return `<span class="shop-detail-delivery-icon" aria-hidden="true">
+      <img src="${src}" alt="${label}" />
+    </span>`;
+  }
+
+  function closeSvg() {
+    return `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>`;
+  }
+
+  function qtyControl() {
+    return `<div class="flex items-center gap-[6px] rounded-[64px] border border-[#e5e7eb] bg-[#f9fafb] p-1">
+      <button type="button" class="flex size-6 items-center justify-center rounded-full bg-[#f3f4f6]" aria-label="Decrease quantity">
+        <span class="h-[2px] w-3 rounded bg-[#334155]"></span>
+      </button>
+      <span class="w-[22px] text-center text-base leading-[22.72px] text-[#030712]">3</span>
+      <button type="button" class="relative flex size-6 items-center justify-center rounded-full bg-[#065386]" aria-label="Increase quantity">
+        <span class="absolute h-[2px] w-3 rounded bg-white"></span>
+        <span class="absolute h-3 w-[2px] rounded bg-white"></span>
+      </button>
+    </div>`;
+  }
+
+  function detailBack(card, title, price) {
+    return `<div class="shop-card-face shop-card-back" aria-hidden="true">
+      <div class="shop-card-back-scroll">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-4">
+            <p class="text-sm leading-[19.88px] text-[#1e293b]">Branded Cups</p>
+            <button type="button" class="shop-card-close flex size-6 items-center justify-center text-[#1e293b]" aria-label="Close product details">
+              ${closeSvg()}
+            </button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-2xl font-bold leading-[31.68px] text-[#0f172a]">${title}</h3>
+            <p class="text-base leading-[22.72px] text-[#334155]">Simple, eco-friendly 8 oz single wall coffee cups with lids, perfect for takeaway drinks. Available in bulk with custom branding options.</p>
+          </div>
+          <div class="shop-detail-divider"></div>
+          <p class="text-xl font-semibold leading-[26.4px] text-[#1e293b]">${price}</p>
+          <div class="shop-detail-divider"></div>
+          <div class="flex flex-col gap-3">
+            <p class="text-sm leading-[19.88px] text-[#1e293b]">Lids</p>
+            <div class="flex flex-wrap gap-3">
+              <button type="button" class="shop-detail-pill is-active">No Lids</button>
+              <button type="button" class="shop-detail-pill">White Lids</button>
+              <button type="button" class="shop-detail-pill">Black Lids</button>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-sm font-medium leading-[19.88px] text-[#4b5563]">Quantity:</p>
+            ${qtyControl()}
+          </div>
+          <div class="shop-detail-divider"></div>
+          <div class="flex flex-col gap-3">
+            <p class="text-sm font-medium leading-[19.88px] text-[#1e293b]">Delivery Options</p>
+            <button type="button" class="shop-detail-delivery is-active">
+              ${deliveryIcon('assets/icons/iconamoon_delivery-light.svg', 'Standard delivery')}
+              <span class="flex flex-1 items-end justify-between gap-3">
+                <span class="flex flex-col text-left">
+                  <span class="text-sm font-medium leading-[19.88px] text-[#0161a3]">Standard Delivery</span>
+                  <span class="text-xs leading-[17.04px] text-[#475569]">(10 Working Days)</span>
+                </span>
+                <span class="text-xs font-medium leading-[17.04px] text-[#475569]">Free</span>
+              </span>
+            </button>
+            <button type="button" class="shop-detail-delivery">
+              ${deliveryIcon('assets/icons/iconamoon_delivery-light.svg', 'Rush delivery')}
+              <span class="flex flex-1 items-end justify-between gap-3">
+                <span class="flex flex-col text-left text-[#475569]">
+                  <span class="text-sm font-medium leading-[19.88px]">Rush Delivery</span>
+                  <span class="text-xs leading-[17.04px]">(6 Working Days)</span>
+                </span>
+                <span class="text-xs font-medium leading-[17.04px] text-[#334155]">+$120</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" class="shop-detail-button shop-detail-button-secondary">More Info ${arrowSvg()}</button>
+        <button type="button" class="shop-detail-button shop-detail-button-primary">Add to Cart ${arrowSvg()}</button>
+      </div>
+    </div>`;
+  }
+
+  cards.forEach(card => {
+    if (card.querySelector('.shop-card-inner')) return;
+    const title = card.querySelector('.shop-product-body h2')?.textContent.trim() || 'Product details';
+    const price = card.querySelector('.shop-product-body p')?.textContent.trim() || '$0.00';
+    const front = card.innerHTML;
+    card.innerHTML = `<div class="shop-card-inner">
+      <div class="shop-card-face shop-card-front">${front}</div>
+      ${detailBack(card, title, price)}
+    </div>`;
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `View details for ${title}`);
+  });
+
+  function flipCard(card, flipped) {
+    card.classList.toggle('is-flipped', flipped);
+    card.setAttribute('aria-pressed', String(flipped));
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('.shop-card-back button')) return;
+      flipCard(card, true);
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      flipCard(card, true);
+    });
+    card.querySelectorAll('.shop-card-back button').forEach(button => {
+      button.addEventListener('click', event => event.stopPropagation());
+    });
+    card.querySelector('.shop-card-close')?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      flipCard(card, false);
+    });
+  });
+}
+
+if (document.getElementById('shop-grid')) {
+  initShopCardFlips();
+}
+
 /* ── Testimonial Marquee ──────────────────────────────────────────── */
 function initTestimonialMarquee() {
   const row1 = document.getElementById('testimonials-row-1');

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Cups Galore</title>
+  <meta name="description" content="Shop Cups Galore products." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cupsgalore.com.au/shop.html" />
+  <link rel="icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/output.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <header></header>
+
+  <main class="flex-1">
+    <section class="w-full border-b border-[#e2e8f0]">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-0 py-8 lg:py-[42px]">
+        <nav class="flex items-center gap-2 text-xs leading-[17.04px] text-[#1e293b] mb-3" aria-label="Breadcrumb">
+          <a href="index.html" class="underline">Home</a>
+          <span class="font-light">/</span>
+          <span class="font-semibold">Shops</span>
+        </nav>
+        <h1 class="text-[#1e293b] text-[32px] lg:text-[44px] font-bold leading-[42.24px] lg:leading-[58.08px] mb-3">
+          Shops
+        </h1>
+        <p class="text-black text-sm leading-[19.88px] max-w-[1260px]">
+          Branded and custom cups are drinkware items like mugs, tumblers, and paper cups that have been personalized
+          with a specific logo, design, or message.
+        </p>
+      </div>
+    </section>
+
+    <section class="w-full">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-0 py-8 lg:py-[42px]">
+        <div class="flex items-center justify-between gap-4 mb-4 lg:hidden">
+          <button id="shop-filter-open"
+            class="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e2e8f0] px-4 text-sm text-[#334155]">
+            <img src="assets/icons/shop/icon-filter.svg" alt="" class="size-[14px]" aria-hidden="true" />
+            Filter
+            <span class="shop-filter-count inline-flex size-5 items-center justify-center rounded-full bg-[#f1f5f9] text-[10px] font-semibold">0</span>
+          </button>
+          <p id="shop-result-count" class="text-sm text-[#475569]">9 products</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] items-start">
+          <aside class="hidden lg:block border border-[#f1f5f9]" aria-label="Shop filters">
+            <div class="flex items-center justify-between gap-3 border-b border-[#e2e8f0] p-3">
+              <div class="flex items-center gap-1 min-w-0">
+                <img src="assets/icons/shop/icon-filter.svg" alt="" class="size-[14px]" aria-hidden="true" />
+                <span class="text-sm leading-[19.88px] text-[#334155]">Filter</span>
+              </div>
+              <span class="shop-filter-count inline-flex size-5 items-center justify-center rounded-full bg-[#f1f5f9] text-[10px] font-semibold text-[#334155]">0</span>
+            </div>
+            <div class="shop-filter-panel" data-shop-filter-panel></div>
+          </aside>
+
+          <div id="shop-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 border-t border-l border-[#f1f5f9]">
+            <article class="shop-product-card" data-category="branded" data-availability="in-stock" data-size="8" data-price="490" data-wall="single" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$490.00</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="branded" data-availability="in-stock" data-size="8" data-price="0.60" data-wall="single" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$0.60</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="branded" data-availability="in-stock" data-size="8" data-price="0.15" data-wall="single" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$0.15</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="ready-design" data-availability="in-stock" data-size="12" data-price="0.04" data-wall="single" data-lid="optional" data-design="ready" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$0.04</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="reusable" data-availability="out-of-stock" data-size="12" data-price="2.20" data-wall="double" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$2.20</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="plain" data-availability="in-stock" data-size="16" data-price="9" data-wall="double" data-lid="optional" data-design="plain" data-color="white">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$9.00</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="packaging" data-availability="in-stock" data-size="8" data-price="30" data-wall="single" data-lid="none" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$30.00</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="branded" data-availability="out-of-stock" data-size="16" data-price="0.40" data-wall="double" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$0.40</p>
+              </div>
+            </article>
+            <article class="shop-product-card" data-category="branded" data-availability="in-stock" data-size="16" data-price="5.50" data-wall="single" data-lid="optional" data-design="custom" data-color="multi">
+              <div class="shop-product-image">
+                <img src="assets/images/shop/custom-logo-cup.png" alt="8 oz Single Wall Cups with Lids optional" />
+              </div>
+              <div class="shop-product-body">
+                <h2>8 oz Single Wall Cups with Lids optional (Box of 1000)</h2>
+                <p><img src="assets/icons/shop/icon-price-dot.svg" alt="" aria-hidden="true" />$5.50</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="shop-filter-overlay" class="fixed inset-0 z-50 pointer-events-none lg:hidden" aria-hidden="true">
+      <div id="shop-filter-backdrop" class="absolute inset-0 bg-black/25 opacity-0 transition-opacity duration-300"></div>
+      <aside id="shop-filter-drawer"
+        class="absolute inset-y-0 left-0 w-[min(340px,88vw)] bg-white transition-transform duration-300 overflow-y-auto"
+        aria-label="Shop filters">
+        <div class="flex items-center justify-between gap-3 border-b border-[#e2e8f0] p-4">
+          <div class="flex items-center gap-2">
+            <img src="assets/icons/shop/icon-filter.svg" alt="" class="size-[14px]" aria-hidden="true" />
+            <span class="text-sm leading-[19.88px] text-[#334155]">Filter</span>
+            <span class="shop-filter-count inline-flex size-5 items-center justify-center rounded-full bg-[#f1f5f9] text-[10px] font-semibold">0</span>
+          </div>
+          <button id="shop-filter-close" class="text-sm font-medium text-[#334155]">Close</button>
+        </div>
+        <div class="shop-filter-panel" data-shop-filter-panel></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="layout/navbar.js"></script>
+  <script src="layout/footer.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
