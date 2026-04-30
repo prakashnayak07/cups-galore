@@ -183,6 +183,34 @@ if (document.querySelector('.insights-swiper')) {
   initInsightsSwiper();
 }
 
+/* ── Home Photo Strip Swiper ─────────────────────────────────────── */
+function initHomePhotoSwiper() {
+  const slider = document.querySelector('.home-photo-swiper');
+  if (!slider || typeof Swiper === 'undefined') return;
+
+  new Swiper(slider, {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    grabCursor: true,
+    watchOverflow: true,
+    freeMode: {
+      enabled: true,
+      momentum: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 3.10,
+        spaceBetween: 12,
+        allowTouchMove: true,
+      },
+    },
+  });
+}
+
+if (document.querySelector('.home-photo-swiper')) {
+  initHomePhotoSwiper();
+}
+
 /* ── Testimonial Marquee ──────────────────────────────────────────── */
 function initTestimonialMarquee() {
   const row1 = document.getElementById('testimonials-row-1');

@@ -60,6 +60,27 @@
   overflow: hidden;
 }
 
+/* ── Home Photo Strip Swiper ─────────────────────────────────── */
+.home-photo-swiper {
+  height: 320px;
+}
+.home-photo-swiper .swiper-slide {
+  height: 320px;
+}
+@media (max-width: 1023.98px) {
+  .home-photo-swiper .swiper-slide {
+    width: 320px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .home-photo-swiper {
+    height: 464px;
+  }
+  .home-photo-swiper .swiper-slide {
+    height: 464px;
+  }
+}
+
 /* ── Scrollbar hide utility ──────────────────────────────────── */
 .scrollbar-hide {
   -ms-overflow-style: none;
