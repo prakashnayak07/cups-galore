@@ -922,19 +922,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── FAQ Accordion ────────────────────────────────────────────── */
   document.querySelectorAll('.faq-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const item    = trigger.closest('.faq-item');
-      const body    = item.querySelector('.faq-body');
-      const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
+      const item   = trigger.closest('.faq-item');
+      const body   = item.querySelector('.faq-body');
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
 
-      /* Close all items */
-      document.querySelectorAll('.faq-trigger').forEach(t => {
-        t.setAttribute('aria-expanded', 'false');
-        t.querySelector('.faq-chevron').style.transform = '';
-        t.closest('.faq-item').querySelector('.faq-body').style.maxHeight = '0';
-      });
-
-      /* Open clicked item if it was closed */
-      if (!isOpen) {
+      /* Toggle clicked item independently */
+      if (isOpen) {
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.querySelector('.faq-chevron').style.transform = '';
+        body.style.maxHeight = '0';
+      } else {
         trigger.setAttribute('aria-expanded', 'true');
         trigger.querySelector('.faq-chevron').style.transform = 'rotate(180deg)';
         body.style.maxHeight = `${body.scrollHeight}px`;
