@@ -63,7 +63,7 @@ const BLOG_TOTAL_PAGES    = 4;
 let   blogCurrentPage     = 1;
 
 function createBlogCard(post) {
-  return `<a href="#" class="blog-card">
+  return `<div class="blog-card">
     <div class="blog-card-img-wrap">
       <img src="${post.image}" alt="${post.title}" class="blog-card-img" loading="lazy" />
     </div>
@@ -73,14 +73,14 @@ function createBlogCard(post) {
         <h3 class="blog-card-title">${post.title}</h3>
         <p class="blog-card-excerpt">${post.excerpt}</p>
       </div>
-      <div class="blog-read-more">
+      <a href="#" class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end hover:text-[#065386] transition-colors">
         Read More
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </div>
+      </a>
     </div>
-  </a>`;
+  </div>`;
 }
 
 function renderBlogGrid(page) {
