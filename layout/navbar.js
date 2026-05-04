@@ -344,7 +344,7 @@ document.body.insertAdjacentHTML('beforeend', `
        style="top: 0; transform: translateY(-110%); transition: transform 0.35s ease-in-out;"
        aria-hidden="true">
     <div class="bg-white border border-[#f1f5f9] shadow-[0px_45px_22.5px_rgba(0,0,0,0.11),0px_11px_12.5px_rgba(0,0,0,0.13)]">
-      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 pt-6 pb-[42px] flex items-start justify-between gap-4">
+      <div class="w-full max-w-[1400px] mx-auto px-4  pt-6 pb-[42px] flex items-start justify-between gap-4">
         ${buildDesktopCatItems()}
       </div>
     </div>

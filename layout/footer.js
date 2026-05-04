@@ -98,9 +98,9 @@ document.querySelector('footer').innerHTML = `
             <nav class="flex flex-col gap-1">
               <a href="index.html"   class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Home</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Home</span></span></a>
               <a href="about.html"   class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">About Us</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">About Us</span></span></a>
-              <a href="#"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Shops</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Shops</span></span></a>
-              <a href="#"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Blogs</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Blogs</span></span></a>
-              <a href="#"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">FAQ</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">FAQ</span></span></a>
+              <a href="shop.html"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Shops</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Shops</span></span></a>
+              <a href="blogs.html"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Blogs</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Blogs</span></span></a>
+              <a href="faq.html"            class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">FAQ</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">FAQ</span></span></a>
               <a href="contact.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Contact Us</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Contact Us</span></span></a>
             </nav>
           </div>
@@ -111,11 +111,11 @@ document.querySelector('footer').innerHTML = `
               <p class="font-semibold text-[18px] text-black leading-normal whitespace-nowrap">Product Category</p>
             </div>
             <nav class="flex flex-col gap-1">
-              <a href="#" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Branded &amp; Custom Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Branded &amp; Custom Cups</span></span></a>
-              <a href="#" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Ready Designs</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Ready Designs</span></span></a>
-              <a href="#" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Reusable Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Reusable Cups</span></span></a>
-              <a href="#" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Plain Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Plain Cups</span></span></a>
-              <a href="#" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Packaging</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Packaging</span></span></a>
+              <a href="shop.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Branded &amp; Custom Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Branded &amp; Custom Cups</span></span></a>
+              <a href="shop.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Ready Designs</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Ready Designs</span></span></a>
+              <a href="shop.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Reusable Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Reusable Cups</span></span></a>
+              <a href="shop.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Plain Cups</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Plain Cups</span></span></a>
+              <a href="shop.html" class="px-3 py-2 text-[16px] text-[#334155] leading-[22.72px] group block"><span class="block relative overflow-hidden h-[22.72px]"><span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">Packaging</span><span class="block absolute inset-x-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full text-[#ea580c]">Packaging</span></span></a>
             </nav>
           </div>
 
@@ -155,15 +155,18 @@ document.querySelector('footer').innerHTML = `
             </div>
           </div>
 
-          <button type="button"
-                  class="inline-flex items-center gap-2.5 bg-[#065386] rounded-full pl-4 pr-1 py-1 text-white text-[16px] font-medium leading-[22.72px] w-fit hover:bg-[#054370] transition-colors duration-200">
+          <a href="shop.html"
+             class="group inline-flex items-center gap-2.5 bg-[#065386] rounded-full pl-4 pr-1 py-1 text-white text-[16px] font-medium leading-[22.72px] w-fit hover:bg-[#054370] transition-colors duration-200">
             Explore &amp; Shop Now
             <span class="relative flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/20 overflow-hidden shrink-0">
               <img src="assets/icons/arrow-up-right.svg" alt=""
-                   class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2"
+                   class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2 transition-transform duration-500 ease-in-out group-hover:translate-x-12 group-hover:-translate-y-12"
+                   aria-hidden="true">
+              <img src="assets/icons/arrow-up-right.svg" alt=""
+                   class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2 -translate-x-12 translate-y-12 transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
                    aria-hidden="true">
             </span>
-          </button>
+          </a>
 
         </div>
       </div>
