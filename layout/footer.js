@@ -194,7 +194,9 @@ document.querySelector('footer').innerHTML = `
           <span class="text-[14px] text-[#334155] leading-normal whitespace-nowrap">English</span>
         </span>
         <span class="w-4 h-4 shrink-0 overflow-hidden">
-          <img src="assets/icons/chevron-down.svg" alt="" class="w-full h-full" aria-hidden="true">
+          <svg class="shop-filter-chevron size-4 transition-transform text-[#334155]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </span>
       </button>
 
