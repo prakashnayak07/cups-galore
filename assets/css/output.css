@@ -623,6 +623,9 @@
   .h-1\/2 {
     height: calc(1 / 2 * 100%);
   }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
   .h-2\.5 {
     height: calc(var(--spacing) * 2.5);
   }
@@ -799,6 +802,9 @@
   }
   .w-1\.5 {
     width: calc(var(--spacing) * 1.5);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
   }
   .w-2\.5 {
     width: calc(var(--spacing) * 2.5);
@@ -1346,6 +1352,9 @@
   }
   .bg-\[\#64748b\]\/30 {
     background-color: color-mix(in oklab, #64748b 30%, transparent);
+  }
+  .bg-\[\#64748b\]\/80 {
+    background-color: color-mix(in oklab, #64748b 80%, transparent);
   }
   .bg-\[\#065386\] {
     background-color: #065386;
