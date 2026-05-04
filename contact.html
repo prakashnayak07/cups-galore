@@ -158,11 +158,18 @@
 
                 <!-- Urgent Inquiry Checkbox -->
                 <div class="flex items-center gap-3">
-                  <input
-                    id="contact-urgent"
-                    type="checkbox"
-                    name="urgent"
-                    class="w-4 h-4 rounded border border-[#b4b5b9] cursor-pointer accent-[#065386] shrink-0" />
+                  <div class="relative w-4 h-4 shrink-0">
+                    <input
+                      id="contact-urgent"
+                      type="checkbox"
+                      name="urgent"
+                      class="peer absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                    <div class="w-4 h-4 rounded border border-[#b4b5b9] bg-white peer-checked:bg-[#065386] peer-checked:border-[#065386] flex items-center justify-center pointer-events-none transition-colors duration-200">
+                      <svg class="w-2.5 h-2.5 text-white" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
                   <label for="contact-urgent" class="text-[14px] font-medium text-[#1e293b] leading-[19.88px] cursor-pointer whitespace-nowrap">
                     Is the Message Urgent Inquiry?
                   </label>
