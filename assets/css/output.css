@@ -7,6 +7,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
@@ -1338,6 +1339,9 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .bg-\[\#0f172a\] {
+    background-color: #0f172a;
+  }
   .bg-\[\#7c3612\] {
     background-color: #7c3612;
   }
@@ -1516,6 +1520,9 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
@@ -1530,6 +1537,9 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -1747,6 +1757,10 @@
   .leading-\[1\.65\] {
     --tw-leading: 1.65;
     line-height: 1.65;
+  }
+  .leading-\[14\.4px\] {
+    --tw-leading: 14.4px;
+    line-height: 14.4px;
   }
   .leading-\[17\.04px\] {
     --tw-leading: 17.04px;
@@ -2139,6 +2153,13 @@
       }
     }
   }
+  .hover\:bg-\[\#1e293b\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #1e293b;
+      }
+    }
+  }
   .hover\:bg-\[\#024e88\] {
     &:hover {
       @media (hover: hover) {
@@ -2202,6 +2223,13 @@
     &:hover {
       @media (hover: hover) {
         color: #ea580c;
+      }
+    }
+  }
+  .hover\:text-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-gray-200);
       }
     }
   }
