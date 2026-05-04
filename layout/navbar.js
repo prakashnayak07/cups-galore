@@ -7,7 +7,7 @@ document.querySelector('header').innerHTML = `
 
     <!-- DESKTOP ONLY · Top Bar ───────────────────────────────────── -->
     <div class="hidden lg:flex items-center bg-[#f1f5f9] py-2">
-      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 flex items-center justify-between gap-4">
+      <div class="w-full mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 flex items-center justify-between gap-4">
 
         <!-- Left: Need Help + Phone + Divider + Contact -->
         <div class="flex items-center gap-3 shrink-0">
@@ -84,7 +84,7 @@ document.querySelector('header').innerHTML = `
 
     <!-- ── Main Nav: Logo + Search + User Actions ────────────────── -->
     <div class="bg-[rgba(255,255,255,0.94)] backdrop-blur-[4.6px] border-b border-[rgba(226,232,240,0.1)]">
-      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-4 pt-4 lg:pt-6 flex items-center gap-4 lg:gap-6">
+      <div class="w-full  mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-4 pt-4 lg:pt-6 flex items-center gap-4 lg:gap-6">
 
         <!-- Logo -->
         <a href="index.html" class="shrink-0">
@@ -159,7 +159,7 @@ document.querySelector('header').innerHTML = `
 
     <!-- ── Desktop Sub Nav: Category + Links + Brand ─────────────── -->
     <div class="hidden lg:block bg-[rgba(255,255,255,0.94)] backdrop-blur-[4.6px]">
-      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 pb-2 flex items-center">
+      <div class="w-full  mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 pb-2 flex items-center">
 
         <!-- Category trigger -->
         <button id="cat-btn" class="flex items-center shrink-0 cursor-pointer" aria-expanded="false" aria-controls="cat-dropdown">
