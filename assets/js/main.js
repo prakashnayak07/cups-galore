@@ -786,10 +786,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* Re-position on resize (e.g. if top bar collapses) */
+  /* Re-position on resize or scroll so dropdown stays attached to navbar */
   window.addEventListener('resize', () => {
     if (catOpen) positionCatDropdown();
   });
+
+  window.addEventListener('scroll', () => {
+    if (catOpen) positionCatDropdown();
+  }, { passive: true });
 
   /* ── Cart Drawer (desktop + mobile, slides from right) ───────── */
 
