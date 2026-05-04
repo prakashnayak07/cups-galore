@@ -19,11 +19,14 @@ document.querySelector('footer').innerHTML = `
       </h2>
 
       <a href="contact.html"
-         class="inline-flex items-center gap-2.5 bg-[#ea580c] rounded-full pl-4 pr-1 py-1 text-white text-sm font-medium shrink-0 self-start md:self-auto hover:bg-[#c2410c] transition-colors duration-200">
+         class="group inline-flex items-center gap-2.5 bg-[#ea580c] rounded-full pl-4 pr-1 py-1 text-white text-sm font-medium shrink-0 self-start md:self-auto hover:bg-[#c2410c] transition-colors duration-200">
         Contact Us
         <span class="relative flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/20 overflow-hidden shrink-0">
           <img src="assets/icons/arrow-up-right.svg" alt=""
-               class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2"
+               class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2 transition-transform duration-500 ease-in-out group-hover:translate-x-12 group-hover:-translate-y-12"
+               aria-hidden="true">
+          <img src="assets/icons/arrow-up-right.svg" alt=""
+               class="absolute w-[35.18px] h-[33.53px] max-w-none top-[14.82px] -left-2 -translate-x-12 translate-y-12 transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
                aria-hidden="true">
         </span>
       </a>
