@@ -296,8 +296,8 @@
           </a>
         </div>
 
-        <!-- Mobile: Swiper carousel (1 card) | Desktop: 3-col grid -->
-        <div class="swiper recent-blogs-swiper lg:hidden">
+        <!-- Swiper: 1 card mobile, 3 cards desktop -->
+        <div class="swiper recent-blogs-swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
@@ -381,82 +381,6 @@
           </div>
         </div>
 
-        <!-- Desktop grid (lg+) -->
-        <div class="hidden lg:grid lg:grid-cols-3 gap-8">
-
-          <a href="blog-details.html" class="blog-card group">
-            <div class="blog-card-img-wrap">
-              <img src="assets/blog/recent1.png" alt="Designing for Trust: Building User Confidence"
-                class="blog-card-img" loading="lazy" />
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <p class="blog-card-date">15 Nov 2025</p>
-                <h3 class="blog-card-title">Designing for Trust: Building User Confidence</h3>
-                <p class="blog-card-excerpt">Learn the critical elements of design that foster trust and reliability
-                  in your products, enhancing user loyalty and satisfaction.</p>
-              </div>
-              <span
-                class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end group-hover:text-[#065386] transition-colors">
-                Read More
-                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="blog-details.html" class="blog-card group">
-            <div class="blog-card-img-wrap">
-              <img src="assets/blog/recent2.png" alt="Creating Interactive Prototypes for User Testing"
-                class="blog-card-img" loading="lazy" />
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <p class="blog-card-date">22 Oct 2025</p>
-                <h3 class="blog-card-title">Creating Interactive Prototypes for User Testing</h3>
-                <p class="blog-card-excerpt">Discover techniques to build effective prototypes that engage users and
-                  elicit valuable feedback during the design process.</p>
-              </div>
-              <span
-                class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end group-hover:text-[#065386] transition-colors">
-                Read More
-                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="blog-details.html" class="blog-card group">
-            <div class="blog-card-img-wrap">
-              <img src="assets/blog/recent3.png" alt="The Psychology of Color in Branding" class="blog-card-img"
-                loading="lazy" />
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-meta">
-                <p class="blog-card-date">28 Oct 2025</p>
-                <h3 class="blog-card-title">The Psychology of Color in Branding</h3>
-                <p class="blog-card-excerpt">Explore how different colors can influence consumer behavior and how to
-                  strategically use them in your designs for maximum impact.</p>
-              </div>
-              <span
-                class="inline-flex items-center gap-1 text-[#0f172a] text-sm font-medium leading-[19.88px] self-end group-hover:text-[#065386] transition-colors">
-                Read More
-                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </a>
-
-        </div>
       </div>
     </div>
 
@@ -472,6 +396,9 @@
     new Swiper('.recent-blogs-swiper', {
       slidesPerView: 1,
       spaceBetween: 24,
+      breakpoints: {
+        1024: { slidesPerView: 3, spaceBetween: 32 },
+      },
     });
   </script>
 </body>
