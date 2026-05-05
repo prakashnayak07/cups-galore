@@ -397,7 +397,7 @@ document.body.insertAdjacentHTML('beforeend', `
           </div>
           <a href="#" class="text-[14px] text-[#0161a3] underline leading-[19.88px]">Add Order Note</a>
         </div>
-        <a href="#" class="bg-[#0161a3] flex items-center justify-between px-4 py-[14px] rounded-[999px] w-full hover:bg-[#024e88] transition-colors duration-200">
+        <a href="#" class="bg-[#0161a3] flex items-center justify-center px-4 py-[14px] rounded-[999px] w-full hover:bg-[#024e88] transition-colors duration-200">
           <span class="text-[16px] font-medium text-white leading-[22.72px] whitespace-nowrap">Check out</span>
         </a>
       </div>
