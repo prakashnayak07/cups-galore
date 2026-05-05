@@ -824,6 +824,9 @@
   .min-h-\[600px\] {
     min-height: 600px;
   }
+  .min-h-\[765px\] {
+    min-height: 765px;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
