@@ -42,7 +42,7 @@ document.querySelector('footer').innerHTML = `
       <!-- Row 1 · Logo + Social -->
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
 
-        <a href="index.html" class="shrink-0">
+        <a href="index.html" class="shrink-0 self-center mx-auto sm:mx-0">
           <img src="assets/images/cups-galore-logo.png" alt="Cups Galore"
                class="h-[65px] w-[162px] object-contain">
         </a>
