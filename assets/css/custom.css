@@ -191,12 +191,15 @@
   color: #475569;
   font-size: 14px;
   line-height: 19.88px;
-  padding: 10px 16px;
+  padding: 9px 16px;
 }
 .shop-detail-pill.is-active {
   background: #e0f0fe;
   border-color: #7ccdfd;
   color: #0b456f;
+}
+[data-quantity-control] {
+  padding: 3px;
 }
 .shop-detail-delivery {
   border: 1px solid #e2e8f0;
