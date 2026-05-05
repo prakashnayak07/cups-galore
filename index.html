@@ -448,73 +448,86 @@
 
 
     <!-- ═══════════════════════════════════════════════════════════
-         SECTION 4 · PACKAGING THAT CREATES MOMENTS
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="w-full pb-[120px]">
-      <div class="w-full  mx-auto ">
-        <div class="flex flex-col-reverse lg:flex-row gap-0 lg:gap-8 xl:gap-[42px] items-stretch lg:items-center">
+             SECTION 4 · PACKAGING THAT CREATES MOMENTS
+             ═══════════════════════════════════════════════════════════ -->
+    <section class="w-full pb-[120px] bg-white">
+      <!-- Max width 1627px accurately fits 965px (left) + 42px (gap) + 620px (right) -->
+      <div class="w-full mx-auto px-4 sm:px-6 lg:px-0">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8">
 
-          <!-- Left: image -->
+          <!-- Left: Image Container (Frame 45) -->
           <div
-            class="relative w-[calc(100%+2rem)] sm:w-full -mx-4 sm:mx-0 lg:w-[40%] 2xl:w-[765px] flex-shrink-0 overflow-hidden border border-[#e2e8f0] h-[240px] sm:h-[320px] md:h-[420px] lg:h-[560px] xl:h-[600px] 2xl:h-[600px] ">
+            class="relative w-full lg:w-[965px] flex-shrink box-border border border-[#E2E8F0] h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden bg-gray-50">
             <img src="assets/images/home/1f37f36534d0bfc0c5d5ba6bb3d528944526060d.png"
-              alt="Packaging that creates moments" class="absolute inset-0 w-full h-full object-cover" />
+              alt="Packaging that creates moments" class="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
 
-          <!-- Right: text + CTAs -->
+          <!-- Right: Text & CTAs (Frame 26) -->
           <div
-            class="flex flex-col gap-6 px-2 md:px-0 lg:gap-8 flex-1 min-w-0 w-full max-w-[620px] lg:max-w-none px-0 py-[60px] lg:py-8 lg:h-fit lg:self-center">
-            <div class="flex flex-col gap-4 lg:gap-6">
-              <div class="flex flex-col gap-2">
+            class="flex flex-col justify-between items-start w-full lg:w-[620px] max-w-[620px] flex-shrink-0 h-auto lg:h-[600px] py-4 lg:py-[32px]">
+
+            <!-- Text Content Block (Frame 1984079370) -->
+            <div class="flex flex-col items-start gap-[16px] w-full">
+
+              <!-- Eyebrow & Title (Frame 1984079368) -->
+              <div class="flex flex-col items-start gap-[8px] w-full">
                 <!-- Eyebrow -->
-                <div class="flex items-center gap-2 min-w-0">
-                  <img src="assets/images/home/297567202cdc823b9f7d9ce47bd45bad1595e190.svg" alt=""
-                    class="w-1.5 h-1.5 flex-shrink-0" />
-                  <span class="min-w-0 text-[#475569] text-sm leading-[19.88px]">Made for brands that care about every
+                <div class="flex items-center gap-[8px]">
+                  <span class="relative flex size-3">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0161a3] opacity-75"></span>
+                    <span class="relative inline-flex size-3 rounded-full bg-[#065386]"></span>
+                  </span>
+                  <span class="text-[#475569] text-[14px] leading-[20px] font-normal">Made for brands that care about
+                    every
                     detail.</span>
                 </div>
+
+                <!-- Title -->
                 <h2
-                  class="font-bold text-[#0f172a] text-2xl sm:text-[28px] md:text-3xl lg:text-[38px] xl:text-[44px] leading-[31.68px] sm:leading-[1.32] lg:leading-[1.32]">
+                  class="w-full text-[#0F172A] text-[32px] sm:text-[38px] lg:text-[44px] leading-[1.2] lg:leading-[58px] font-bold font-['satoshi']">
                   Packaging That Creates Moments
                 </h2>
               </div>
-              <p class="text-[#334155] text-sm md:text-base leading-[19.88px] md:leading-[22.72px]">
+
+              <!-- Paragraph -->
+              <p class="w-full text-[#334155] text-[16px] leading-[23px] font-normal">
                 Every cup tells a story. From the first sip to the last, our prints turn simple packaging into an
-                extension of your brand — creating tactile experiences your customers remember long after their drink is
-                gone.
+                extension
+                of your brand — creating tactile experiences your customers remember long after their drink is gone.
               </p>
+
             </div>
 
-            <!-- CTAs -->
-            <div
-              class="flex flex-col min-[375px]:flex-row flex-wrap gap-2 min-[390px]:gap-3 items-start min-[375px]:items-end">
+            <!-- CTAs (Frame 1984079371) -->
+            <div class="flex flex-row flex-wrap items-end gap-[12px] mt-8 lg:mt-0">
               <a href="/shop"
-                class="group inline-flex min-h-[50px] items-center justify-center gap-2 bg-[#065386] text-white text-base font-medium leading-[22.72px] pl-4 pr-1 py-1 rounded-full hover:bg-[#0a6ab0] transition-colors">
-                Explore &amp; Shop Now
+                class="group inline-flex items-center gap-3 bg-[#065386] text-white text-[16px] font-medium leading-[23px] pl-5 pr-1 py-1 rounded-full hover:bg-[#0a6ab0] transition-colors">
+                <span>Explore &amp; Shop Now</span>
                 <span
-                  class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/24 overflow-hidden relative flex-shrink-0">
+                  class="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-white/24 relative overflow-hidden flex-shrink-0">
                   <img src="assets/images/home/f64eec2981c30d38c14730271544a9c8c7831fe2.svg" alt=""
                     class="absolute w-[35px] h-[34px] -left-2 top-[15px] transition-transform duration-500 ease-in-out group-hover:translate-x-12 group-hover:-translate-y-12" />
                   <img src="assets/images/home/f64eec2981c30d38c14730271544a9c8c7831fe2.svg" alt=""
                     class="absolute w-[35px] h-[34px] -left-2 top-[15px] -translate-x-12 translate-y-12 transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0" />
                 </span>
               </a>
+
               <a href="/contact"
-                class="inline-flex min-h-[50px] items-center justify-center gap-1 text-[#475569] text-sm font-medium leading-[19.88px] px-3 sm:px-4 py-[14px] rounded-full hover:bg-[#f1f5f9] transition-colors">
-                Let's Talk
-                <?xml version="1.0" ?><!-- License: CC Attribution. Made by kavithaharish: https://www.behance.net/kavithaharish -->
-                <svg width="20px" height="20px" viewBox="0 0 512 512" data-name="Layer 1" id="Layer_1"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="150.46 478 129.86 456.5 339.11 256 129.86 55.49 150.46 34 382.14 256 150.46 478" />
+                class="inline-flex items-center justify-center gap-[4px] text-[#475569] text-[14px] font-medium leading-[20px] px-4 py-1 rounded-full hover:bg-[#f1f5f9] transition-colors h-[50px] box-border">
+                Lets Talk
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="text-[#475569]">
+                  <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </svg>
               </a>
             </div>
+
           </div>
 
         </div>
       </div>
     </section>
-
 
     <!-- ═══════════════════════════════════════════════════════════
          SECTION 5 · READY TO START (CTA Banner + Photos)
