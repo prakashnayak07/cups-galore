@@ -618,8 +618,6 @@ function initProductDetailPage() {
       image.src = button.dataset.productThumb;
       document.querySelectorAll('[data-product-thumb]').forEach(item => {
         item.classList.toggle('is-active', item === button);
-        item.classList.toggle('border-[#7ccdfd]', item === button);
-        item.classList.toggle('border-[#e2e8f0]', item !== button);
       });
     });
   });
@@ -651,11 +649,11 @@ function initProductDetailPage() {
       grabCursor: true,
       watchOverflow: true,
       breakpoints: {
-        390: { slidesPerView: 1.55, spaceBetween: 16 },
-        640: { slidesPerView: 2.2, spaceBetween: 18 },
-        1024: { slidesPerView: 3.35, spaceBetween: 0 },
-        1280: { slidesPerView: 4.5, spaceBetween: 0 },
-        1536: { slidesPerView: 4.5, spaceBetween: 0 },
+        640: { slidesPerView: 2, spaceBetween: 16 },
+        1024: { slidesPerView: 3.25, spaceBetween: 0 },
+        1280: { slidesPerView: 3.25, spaceBetween: 0 },
+        1440: { slidesPerView: 4.25, spaceBetween: 0 },
+        1920: { slidesPerView: 4.25, spaceBetween: 0 },
       },
     });
   }
