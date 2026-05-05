@@ -335,24 +335,25 @@ function closeBtn(id, extraClasses) {
     </button>`;
 }
 
-/* Inject overlays into body (outside header to avoid backdrop-filter containing-block issues) */
-document.body.insertAdjacentHTML('beforeend', `
-
-  <!-- ── Desktop Category Dropdown (z-30, slides down from navbar) ── -->
+/* Category dropdown — absolute inside sticky navbar-wrapper so it follows naturally on scroll */
+document.getElementById('navbar-wrapper').insertAdjacentHTML('beforeend', `
   <div id="cat-dropdown"
-       class="fixed z-30 left-0 right-0 hidden"
-       style="top: 0; transform: translateY(-110%); transition: transform 0.35s ease-in-out;"
+       class="absolute left-0 right-0 w-full overflow-x-hidden z-10"
+       style="top: 100%; opacity: 0; pointer-events: none; transition: opacity 0.2s ease;"
        aria-hidden="true">
     <div class="bg-white border border-[#f1f5f9] shadow-[0px_45px_22.5px_rgba(0,0,0,0.11),0px_11px_12.5px_rgba(0,0,0,0.13)]">
-      <div class="w-full max-w-[1400px] mx-auto px-4  pt-6 pb-[42px] flex items-start justify-between gap-4">
+      <div class="w-full max-w-[1400px] mx-auto px-4 pt-6 pb-[42px] flex items-start justify-between gap-4">
         ${buildDesktopCatItems()}
       </div>
     </div>
-    <!-- Close X below panel -->
     <div class="flex justify-center pt-3 pb-2">
       ${closeBtn('cat-close-btn', '')}
     </div>
   </div>
+`);
+
+/* Inject remaining overlays into body (cart + mobile cat — these must stay on body due to fixed positioning) */
+document.body.insertAdjacentHTML('beforeend', `
 
   <!-- ── Cart Overlay (desktop + mobile, slides from right) ──────── -->
   <div id="cart-overlay"

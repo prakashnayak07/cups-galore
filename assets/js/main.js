@@ -699,7 +699,6 @@ if (document.getElementById('testimonials-row-1')) {
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Element refs ─────────────────────────────────────────────── */
-  const navbar        = document.getElementById('navbar-wrapper');
   const catDropdown   = document.getElementById('cat-dropdown');
   const catBtn        = document.getElementById('cat-btn');
   const catCloseBtn   = document.getElementById('cat-close-btn');
@@ -734,28 +733,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = (cartOpen || mobileCatOpen) ? 'hidden' : '';
   }
 
-  /* Return the current navbar bottom offset (for category dropdown top) */
-  function getNavbarBottom() {
-    return navbar ? navbar.getBoundingClientRect().bottom : 0;
-  }
-
-  /* Position the category dropdown just below the sticky navbar */
-  function positionCatDropdown() {
-    if (catDropdown) {
-      catDropdown.style.top = `${getNavbarBottom()}px`;
-    }
-  }
-
   /* ── Category Dropdown (desktop, slide down) ─────────────────── */
 
   function openCat() {
     if (!catDropdown || catOpen) return;
     catOpen = true;
-    positionCatDropdown();
-    catDropdown.classList.remove('hidden');
-    /* Force reflow so the initial translateY(-110%) is applied before transitioning */
-    catDropdown.getBoundingClientRect();
-    catDropdown.style.transform = 'translateY(0)';
+    catDropdown.style.opacity = '1';
+    catDropdown.style.pointerEvents = 'auto';
     catDropdown.setAttribute('aria-hidden', 'false');
     if (catBtn) catBtn.setAttribute('aria-expanded', 'true');
   }
@@ -763,13 +747,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeCat() {
     if (!catDropdown || !catOpen) return;
     catOpen = false;
-    catDropdown.style.transform = 'translateY(-110%)';
+    catDropdown.style.opacity = '0';
+    catDropdown.style.pointerEvents = 'none';
     catDropdown.setAttribute('aria-hidden', 'true');
     if (catBtn) catBtn.setAttribute('aria-expanded', 'false');
-    /* Hide element after transition so it doesn't intercept pointer events */
-    catDropdown.addEventListener('transitionend', () => {
-      if (!catOpen) catDropdown.classList.add('hidden');
-    }, { once: true });
   }
 
   function toggleCat() {
@@ -786,14 +767,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* Re-position on resize or scroll so dropdown stays attached to navbar */
-  window.addEventListener('resize', () => {
-    if (catOpen) positionCatDropdown();
-  });
-
-  window.addEventListener('scroll', () => {
-    if (catOpen) positionCatDropdown();
-  }, { passive: true });
 
   /* ── Cart Drawer (desktop + mobile, slides from right) ───────── */
 
