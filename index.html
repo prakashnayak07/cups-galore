@@ -302,19 +302,19 @@
             <!-- Branded Cups — wide card -->
             <a href="/shop/branded"
               class="group relative bg-[#f1f5f9] border border-[#f1f5f9] rounded-[30px] lg:rounded-[32px] overflow-hidden p-8 flex flex-col gap-3 h-[280px] lg:h-[346px]">
+              <span
+                class="hidden lg:inline-flex absolute right-6 top-6 bg-[#f1f5f9] border border-[#cbd5e1] rounded-full px-2 py-1 text-xs text-[#334155] z-10">Branded
+                Cups</span>
               <div class="absolute inset-0 pointer-events-none overflow-hidden">
                 <img src="assets/images/home/055fed0095e2c0fb8158e13fbeb5bc5a32ed8a34.png" alt=""
                   class="absolute left-1/2 top-[calc(50%-130px)] -translate-x-1/2 -translate-y-1/2 w-[962px] h-[962px] object-cover max-w-none transition-transform duration-500 scale-110 group-hover:scale-100" />
               </div>
               <div class="relative flex flex-col gap-3 flex-1 justify-between">
-                <div class="flex flex-col gap-3">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="font-bold text-[#0f172a] text-xl lg:text-2xl leading-[31.68px] whitespace-nowrap">Your
-                      Logo. Our Cup.</p>
-                    <span
-                      class="bg-[#f1f5f9] border border-[#cbd5e1] rounded-full px-2 py-1 text-xs text-[#334155] whitespace-nowrap flex-shrink-0">Branded
-                      Cups</span>
-                  </div>
+                <div class="flex flex-col gap-1">
+                  <span
+                    class="bg-[#f1f5f9] border border-[#cbd5e1] rounded-full px-2 py-1 text-xs text-[#334155] self-start lg:hidden">Branded
+                    Cups</span>
+                  <p class="font-bold text-[#0f172a] text-xl lg:text-2xl leading-[31.68px]">Your Logo. Our Cup.</p>
                   <p class="text-[#475569] text-base leading-[22.72px]">Showcase your brand with full-wrap or spot logo
                     printing.</p>
                 </div>
@@ -462,7 +462,7 @@
 
           <!-- Right: text + CTAs -->
           <div
-            class="flex flex-col gap-6 lg:gap-8 flex-1 min-w-0 w-full max-w-[620px] lg:max-w-none px-0 py-[60px] lg:py-8 lg:h-fit lg:self-center">
+            class="flex flex-col gap-6 px-2 md:px-0 lg:gap-8 flex-1 min-w-0 w-full max-w-[620px] lg:max-w-none px-0 py-[60px] lg:py-8 lg:h-fit lg:self-center">
             <div class="flex flex-col gap-4 lg:gap-6">
               <div class="flex flex-col gap-2">
                 <!-- Eyebrow -->
@@ -619,11 +619,11 @@
     <section class="w-full py-16 lg:py-[120px] testimonials-section overflow-hidden">
       <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mb-8 lg:mb-12">
         <div class="flex flex-col gap-3">
-          <p class="text-[#065386] text-sm font-medium leading-[19.88px]">Trusted by Australian Brands</p>
-          <h2 class="font-bold text-[#0f172a] text-3xl lg:text-[44px] leading-[1.32] lg:leading-[58px]">
+
+          <h2 class="font-bold text-[#0f172a] text-3xl lg:text-[44px] leading-[1.32] lg:leading-[58px] text-center">
             What Our Partners Say About Us
           </h2>
-          <p class="text-[#334155] text-base leading-[22.72px] max-w-[706px]">
+          <p class="text-[#334155] text-base leading-[22.72px] max-w-[706px] text-center mx-auto">
             Real reviews from businesses who trust us with their cups — and their brand.
           </p>
         </div>
@@ -632,7 +632,7 @@
       <div class="testimonials-rows-wrap flex flex-col gap-6 lg:gap-8">
 
         <!-- Fade overlays -->
-        <div class="relative testimonials-overflow">
+        <div class="relative testimonials-overflow hidden lg:block">
           <div class="testimonials-fade-left"></div>
           <div class="testimonials-fade-right"></div>
           <!-- Row 1: scrolls left -->
