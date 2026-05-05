@@ -394,6 +394,22 @@
   background-color: rgba(255, 255, 255, 0.24);
 }
 
+/* ── Contact form checkbox ──────────────────────────────────── */
+#contact-urgent + div {
+  background-color: #ffffff;
+  border-color: #b4b5b9;
+}
+#contact-urgent + div svg {
+  opacity: 0;
+}
+#contact-urgent:checked + div {
+  background-color: #ffffff;
+  border-color: #065386;
+}
+#contact-urgent:checked + div svg {
+  opacity: 1;
+}
+
 /* ── FAQ Tab States ──────────────────────────────────────────── */
 .faq-tab[data-active="true"] {
   background-color: #e0f0fe;
