@@ -446,6 +446,11 @@
   height: 100%;
 }
 
+/* ── Section 4: reorder image/text on desktop ───────────────── */
+@media (min-width: 1024px) {
+  .section4-image { order: -1; }
+}
+
 /* ── Recent blogs desktop grid ───────────────────────────────── */
 .recent-blogs-desktop {
   display: none;

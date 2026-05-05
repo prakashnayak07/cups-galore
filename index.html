@@ -452,24 +452,17 @@
              ═══════════════════════════════════════════════════════════ -->
     <section class="w-full pb-[120px] bg-white">
       <!-- Max width 1627px accurately fits 965px (left) + 42px (gap) + 620px (right) -->
-      <div class="w-full  mx-auto px-4 sm:px-6 lg:px-0">
+      <div class="w-full max-w-[1627px] mx-auto lg:px-0">
         <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-[42px]">
 
-          <!-- Left: Image Container (Frame 45) -->
+          <!-- Text first in DOM = first on mobile; CSS pushes it right on desktop -->
           <div
-            class="relative w-full lg:w-[965px] flex-shrink box-border border border-[#E2E8F0] h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden bg-gray-50">
-            <img src="assets/images/home/1f37f36534d0bfc0c5d5ba6bb3d528944526060d.png"
-              alt="Packaging that creates moments" class="absolute inset-0 w-full h-full object-cover object-center" />
-          </div>
+            class="section4-text flex flex-col justify-between items-start w-full lg:w-[620px] max-w-[620px] flex-shrink-0 h-auto lg:h-[600px] px-4 sm:px-6 lg:px-0 py-4 lg:py-[32px]">
 
-          <!-- Right: Text & CTAs (Frame 26) -->
-          <div
-            class="flex flex-col justify-between items-start w-full lg:w-[620px] max-w-[620px] flex-shrink-0 h-auto lg:h-[600px] py-4 lg:py-[32px]">
-
-            <!-- Text Content Block (Frame 1984079370) -->
+            <!-- Text Content Block -->
             <div class="flex flex-col items-start gap-[16px] w-full">
 
-              <!-- Eyebrow & Title (Frame 1984079368) -->
+              <!-- Eyebrow & Title -->
               <div class="flex flex-col items-start gap-[8px] w-full">
                 <!-- Eyebrow -->
                 <div class="flex items-center gap-[8px]">
@@ -499,7 +492,7 @@
 
             </div>
 
-            <!-- CTAs (Frame 1984079371) -->
+            <!-- CTAs -->
             <div class="flex flex-row flex-wrap items-end gap-[12px] mt-8 lg:mt-0">
               <a href="/shop"
                 class="group inline-flex items-center gap-3 bg-[#065386] text-white text-[16px] font-medium leading-[23px] pl-5 pr-1 py-1 rounded-full hover:bg-[#0a6ab0] transition-colors">
@@ -524,6 +517,13 @@
               </a>
             </div>
 
+          </div>
+
+          <!-- Image second in DOM = second on mobile; CSS pulls it left on desktop -->
+          <div
+            class="section4-image relative w-full lg:w-[965px] flex-shrink-0 box-border border border-[#E2E8F0] h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden bg-gray-50">
+            <img src="assets/images/home/1f37f36534d0bfc0c5d5ba6bb3d528944526060d.png"
+              alt="Packaging that creates moments" class="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
 
         </div>
