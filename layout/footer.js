@@ -188,22 +188,49 @@ document.querySelector('footer').innerHTML = `
         <a href="#" class="px-3 py-2 text-[16px] text-[#334155] hover:text-[#ea580c] transition-colors duration-150">Sitemap</a>
       </div>
 
-      <button type="button"
-              class="inline-flex items-center gap-2.5 border border-[#e2e8f0] rounded-full px-4 py-3 hover:border-[#94a3b8] transition-colors duration-200 mx-auto md:mx-0">
-        <span class="flex items-center gap-1">
+      <div class="relative inline-flex items-center gap-2.5 border border-[#e2e8f0] rounded-full px-4 py-3 hover:border-[#94a3b8] transition-colors duration-200 mx-auto md:mx-0">
+        <button type="button" class="footer-language-trigger inline-flex items-center gap-1 bg-transparent outline-none">
           <span class="w-6 h-6 shrink-0 overflow-hidden">
             <img src="assets/icons/globe.svg" alt="" class="w-full h-full" aria-hidden="true">
           </span>
           <span class="text-[14px] text-[#334155] leading-normal whitespace-nowrap">English</span>
-        </span>
-        <span class="w-4 h-4 shrink-0 overflow-hidden">
+        </button>
+        <span class="footer-language-chevron w-4 h-4 shrink-0 overflow-hidden transition-transform duration-300 ease-in-out">
           <svg class="shop-filter-chevron size-4 transition-transform text-[#334155]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </span>
-      </button>
+
+        <div class="footer-language-menu absolute right-0 bottom-full mb-2 w-[180px] overflow-hidden rounded-2xl border border-[#e2e8f0] bg-white shadow-xl opacity-0 scale-95 pointer-events-none transition-all duration-200 z-20">
+          <button type="button" class="w-full px-4 py-3 text-left text-[14px] text-[#334155] hover:bg-[#f8fafc]">English</button>
+        </div>
+      </div>
 
     </div>
   </div>
 
 `;
+
+const footerLanguageToggle = document.querySelector('footer .footer-language-trigger');
+const footerLanguageMenu = document.querySelector('footer .footer-language-menu');
+const footerLanguageChevron = document.querySelector('footer .footer-language-chevron');
+
+footerLanguageToggle?.addEventListener('click', function (event) {
+  event.stopPropagation();
+  const isOpen = footerLanguageMenu?.classList.toggle('footer-language-open');
+  footerLanguageMenu?.classList.toggle('opacity-100', isOpen);
+  footerLanguageMenu?.classList.toggle('opacity-0', !isOpen);
+  footerLanguageMenu?.classList.toggle('scale-100', isOpen);
+  footerLanguageMenu?.classList.toggle('scale-95', !isOpen);
+  footerLanguageMenu?.classList.toggle('pointer-events-auto', isOpen);
+  footerLanguageMenu?.classList.toggle('pointer-events-none', !isOpen);
+  footerLanguageChevron?.classList.toggle('rotate-180', isOpen);
+});
+
+document.addEventListener('click', function () {
+  if (footerLanguageMenu?.classList.contains('footer-language-open')) {
+    footerLanguageMenu.classList.remove('footer-language-open', 'opacity-100', 'scale-100');
+    footerLanguageMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+    footerLanguageChevron?.classList.remove('rotate-180');
+  }
+});
