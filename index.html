@@ -451,23 +451,33 @@
 
 
     <!-- ═══════════════════════════════════════════════════════════
-             SECTION 4 · PACKAGING THAT CREATES MOMENTS
-             ═══════════════════════════════════════════════════════════ -->
-    <section class="w-full pb-[120px] bg-white">
-      <!-- Max width 1627px accurately fits 965px (left) + 42px (gap) + 620px (right) -->
-      <div class="w-full  mx-auto lg:px-0">
-        <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-[42px]">
+           SECTION 4 · PACKAGING THAT CREATES MOMENTS
+           ═══════════════════════════════════════════════════════════ -->
+    <section class="w-full pb-[120px] bg-white overflow-hidden relative">
+      <!-- 
+      1. max-w-[1920px] prevents ultra-wides from stretching infinitely.
+      2. mr-auto ml-0 (or flex justify-start) anchors everything to the Left Edge.
+    -->
+      <div class="w-full max-w-[1920px] flex justify-start mx-auto">
 
-          <!-- Text first in DOM = first on mobile; CSS pushes it right on desktop -->
+        <!-- 
+        1. max-w-[1627px] is your exact Figma total width (965 + 42 + 620).
+        2. lg:pl-0 guarantees the left side touches the screen edge (Bleed).
+        3. lg:pr-8 protects the text from touching the right edge on smaller laptops.
+      -->
+        <div
+          class="w-full max-w-[1627px] flex flex-col lg:flex-row-reverse items-center justify-between gap-6 lg:gap-0 px-0 lg:pl-0 lg:pr-8 xl:pr-12 2xl:pr-0">
+
+          <!-- ================= RIGHT SIDE: TEXT (Top on mobile) ================= -->
+          <!-- 38.1% ratio perfectly hits exactly 620px when the screen is large -->
           <div
-            class="section4-text flex flex-col justify-between items-start w-full lg:w-[620px] max-w-[620px] flex-shrink-0 h-auto lg:h-[600px] px-4 sm:px-6 lg:px-0 py-4 lg:py-[32px]">
+            class="section4-text px-4 flex flex-col justify-between items-start w-full lg:w-[38.1%] lg:max-w-[620px] h-auto lg:h-[600px] py-10 lg:py-[60px] relative z-10">
 
-            <!-- Text Content Block -->
+            <!-- Text Content Block (Pushed Top) -->
             <div class="flex flex-col items-start gap-[16px] w-full">
 
               <!-- Eyebrow & Title -->
               <div class="flex flex-col items-start gap-[8px] w-full">
-                <!-- Eyebrow -->
                 <div class="flex items-center gap-[8px]">
                   <span class="relative flex size-3">
                     <span
@@ -479,7 +489,6 @@
                     detail.</span>
                 </div>
 
-                <!-- Title -->
                 <h2
                   class="w-full text-[#0F172A] text-[32px] sm:text-[38px] lg:text-[44px] leading-[1.2] lg:leading-[58px] font-bold font-['satoshi']">
                   Packaging That Creates Moments
@@ -495,8 +504,8 @@
 
             </div>
 
-            <!-- CTAs -->
-            <div class="flex flex-row flex-wrap items-end gap-[12px] mt-8 lg:mt-0">
+            <!-- CTAs (Pushed Bottom) -->
+            <div class="flex flex-row flex-wrap items-center gap-[12px] mt-10 lg:mt-0 w-full">
               <a href="/shop"
                 class="group inline-flex items-center gap-3 bg-[#065386] text-white text-[16px] font-medium leading-[23px] pl-5 pr-1 py-1 rounded-full hover:bg-[#0a6ab0] transition-colors">
                 <span>Explore &amp; Shop Now</span>
@@ -522,9 +531,11 @@
 
           </div>
 
-          <!-- Image second in DOM = second on mobile; CSS pulls it left on desktop -->
+          <!-- ================= LEFT SIDE: IMAGE BLEED (Bottom on mobile) ================= -->
+          <!-- 59.3% ratio perfectly hits exactly 965px on large screens. -->
+          <!-- Since the container is pushed left, this touches the left edge natively! -->
           <div
-            class="section4-image relative w-full lg:w-[765px] flex-shrink-0 box-border border border-[#E2E8F0] h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden bg-gray-50">
+            class="relative w-full lg:w-[59.3%] lg:max-w-[965px] h-[350px] sm:h-[450px] lg:h-[600px] flex-shrink-0 box-border border border-[#E2E8F0] bg-gray-50 overflow-hidden">
             <img src="assets/images/home/1f37f36534d0bfc0c5d5ba6bb3d528944526060d.png"
               alt="Packaging that creates moments" class="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
@@ -917,7 +928,7 @@
               <div class="flex flex-col gap-[11px]">
                 <label class="text-[#334155] text-sm leading-[19.88px]">Message</label>
                 <div class="border-b border-[#e2e8f0] flex items-start px-2 py-2 min-h-[105px]">
-                  <textarea placeholder="Enter Message here..." rows="4"
+                  <textarea placeholder="Enter message here..." rows="4"
                     class="flex-1 text-[#94a3b8] text-sm leading-[19.88px] bg-transparent outline-none placeholder-[#94a3b8] resize-none w-full"></textarea>
                 </div>
               </div>
