@@ -244,17 +244,14 @@ const shopFilterGroups = [
     key: 'sort',
     label: 'Sort By',
     options: [
-      { label: 'Price: Low to High', value: 'price-asc' },
-      { label: 'Price: High to Low', value: 'price-desc' },
-    ],
-  },
-  {
-    key: 'size',
-    label: 'Size (oz)',
-    options: [
-      { label: '8 oz', value: '8' },
-      { label: '12 oz', value: '12' },
-      { label: '16 oz', value: '16' },
+      { label: 'Featured', value: 'featured' },
+      { label: 'Best Selling', value: 'best-selling' },
+      { label: 'Alphabetically, A-Z', value: 'alpha-asc' },
+      { label: 'Alphabetically, Z-A', value: 'alpha-desc' },
+      { label: 'Price, Low to High', value: 'price-asc' },
+      { label: 'Price, High to Low', value: 'price-desc' },
+      { label: 'Date, Old to New', value: 'date-asc' },
+      { label: 'Date, New to old', value: 'date-desc' },
     ],
   },
   {
@@ -278,25 +275,39 @@ const shopFilterGroups = [
     key: 'lid',
     label: 'Cup Lid',
     options: [
-      { label: 'No Lids', value: 'none' },
-      { label: 'Lids Optional', value: 'optional' },
+      { label: 'Without LIDS', value: 'none' },
+      { label: 'White LIDS', value: 'white' },
+      { label: 'Black LIDS', value: 'black' },
     ],
   },
   {
     key: 'design',
     label: 'Design',
     options: [
-      { label: 'Custom', value: 'custom' },
-      { label: 'Ready Design', value: 'ready' },
-      { label: 'Plain', value: 'plain' },
+      { label: 'Undecorated', value: 'undecorated' },
+      { label: 'Laser Engraved', value: 'laser-engraved' },
+      { label: 'Digital Print', value: 'digital-print' },
     ],
   },
   {
     key: 'color',
     label: 'Color',
     options: [
-      { label: 'Multi', value: 'multi' },
+      { label: 'Black', value: 'black' },
       { label: 'White', value: 'white' },
+      { label: 'Red', value: 'red' },
+      { label: 'Blue', value: 'blue' },
+      { label: 'Green', value: 'green' },
+    ],
+  },
+  {
+    key: 'size',
+    label: 'Size',
+    options: [
+      { label: 'Small', value: 'small' },
+      { label: 'Large', value: 'large' },
+      { label: 'Medium', value: 'medium' },
+      { label: 'Large', value: 'large-alt' },
     ],
   },
 ];
@@ -306,17 +317,50 @@ function initShopFilters() {
   const grid = document.getElementById('shop-grid');
   if (!panels.length || !grid) return;
 
+  const cards = Array.from(grid.querySelectorAll('.shop-product-card'));
+  const productPrices = cards.map(card => Number(card.dataset.price)).filter(Number.isFinite);
+  const priceRangeMin = 0;
+  const priceRangeMax = Math.ceil(Math.max(...productPrices, 120));
+  const priceStep = priceRangeMax <= 20 ? 0.01 : 1;
+
+  function priceRangeMarkup() {
+    return `<div class="shop-price-range" data-price-range>
+      <div class="shop-price-fields">
+        <label class="shop-price-field">
+          <span>$</span>
+          <input type="number" name="price-min" value="${priceRangeMin}" min="${priceRangeMin}" max="${priceRangeMax}" step="${priceStep}" data-price-min aria-label="Minimum price">
+        </label>
+        <span class="shop-price-separator">-</span>
+        <label class="shop-price-field">
+          <span>$</span>
+          <input type="number" name="price-max" value="${priceRangeMax}" min="${priceRangeMin}" max="${priceRangeMax}" step="${priceStep}" data-price-max aria-label="Maximum price">
+        </label>
+      </div>
+      <div class="shop-price-slider">
+        <div class="shop-price-slider-track" data-price-track></div>
+        <input type="range" name="price-min-range" value="${priceRangeMin}" min="${priceRangeMin}" max="${priceRangeMax}" step="${priceStep}" data-price-min-range aria-label="Minimum price">
+        <input type="range" name="price-max-range" value="${priceRangeMax}" min="${priceRangeMin}" max="${priceRangeMax}" step="${priceStep}" data-price-max-range aria-label="Maximum price">
+      </div>
+    </div>`;
+  }
+
   function panelMarkup() {
     return shopFilterGroups.map((group) => {
       const expanded = group.open ? 'true' : 'false';
-      const options = group.options.map((option) => {
+      let options = group.key === 'price' ? priceRangeMarkup() : group.options.map((option) => {
         const checked = option.value === 'all' ? 'checked' : '';
-        return `<label class="shop-filter-option flex items-center gap-3 text-sm font-medium leading-[19.88px] text-[#1e293b] cursor-pointer">
-          <input class="sr-only" type="checkbox" name="${group.key}" value="${option.value}" ${checked}>
+        const inputType = group.key === 'sort' ? 'radio' : 'checkbox';
+        const optionClass = group.key === 'sort' ? ' shop-filter-option-radio' : '';
+        return `<label class="shop-filter-option${optionClass} flex items-center gap-3 text-sm font-medium leading-[19.88px] text-[#1e293b] cursor-pointer">
+          <input class="sr-only" type="${inputType}" name="${group.key}" value="${option.value}" ${checked}>
           <span class="shop-filter-check"><img src="assets/icons/shop/icon-check.svg" alt="" aria-hidden="true"></span>
           <span>${option.label}</span>
         </label>`;
       }).join('');
+
+      if (group.key === 'color') {
+        options += '<button type="button" class="shop-filter-view-more">View More</button>';
+      }
 
       return `<div class="border-b border-[#e2e8f0]">
         <button type="button" class="shop-filter-trigger flex w-full items-center justify-between gap-4 px-2 py-4 text-left"
@@ -339,7 +383,7 @@ function initShopFilters() {
     panel.innerHTML = panelMarkup();
   });
 
-  const cards = Array.from(grid.querySelectorAll('.shop-product-card'));
+  const originalIndex = new Map(cards.map((card, index) => [card, index]));
   const resultCount = document.getElementById('shop-result-count');
   const filterCounts = document.querySelectorAll('.shop-filter-count');
 
@@ -351,28 +395,37 @@ function initShopFilters() {
     return selected;
   }
 
-  function priceMatches(price, ranges) {
-    if (!ranges.length) return true;
-    return ranges.some(range => {
-      if (range === 'under-1') return price < 1;
-      if (range === '1-10') return price >= 1 && price <= 10;
-      if (range === '10-plus') return price > 10;
-      return true;
-    });
+  function getPriceRange() {
+    const minInput = document.querySelector('[data-price-min]');
+    const maxInput = document.querySelector('[data-price-max]');
+    const min = Number(minInput?.value ?? priceRangeMin);
+    const max = Number(maxInput?.value ?? priceRangeMax);
+    return {
+      min: Number.isFinite(min) ? min : priceRangeMin,
+      max: Number.isFinite(max) ? max : priceRangeMax,
+    };
+  }
+
+  function priceMatches(price) {
+    const range = getPriceRange();
+    return price >= range.min && price <= range.max;
   }
 
   function cardMatches(card, selected) {
     return shopFilterGroups.every(group => {
       const values = selected[group.key].filter(value => value !== 'all');
+      if (group.key === 'price') return priceMatches(Number(card.dataset.price));
       if (!values.length || group.key === 'sort') return true;
-      if (group.key === 'price') return priceMatches(Number(card.dataset.price), values);
       return values.includes(card.dataset[group.key]);
     });
   }
 
   function activeFilterCount(selected) {
+    const priceRange = getPriceRange();
+    const priceActive = priceRange.min !== priceRangeMin || priceRange.max !== priceRangeMax;
     return Object.entries(selected).reduce((total, [key, values]) => {
       if (key === 'sort') return total;
+      if (key === 'price') return total + (priceActive ? 1 : 0);
       return total + values.filter(value => value !== 'all').length;
     }, 0);
   }
@@ -380,9 +433,27 @@ function initShopFilters() {
   function sortCards(selected) {
     const sortValue = selected.sort[0];
     if (!sortValue) return;
+
+    const titleFor = card => card.querySelector('.shop-product-body h2')?.textContent.trim() || '';
+    const dateFor = card => {
+      const rawDate = card.dataset.date || card.dataset.createdAt || '';
+      const parsed = Date.parse(rawDate);
+      return Number.isNaN(parsed) ? originalIndex.get(card) : parsed;
+    };
+    const bestSellingFor = card => Number(card.dataset.bestSelling || card.dataset.sales || originalIndex.get(card));
+
     const sorted = [...cards].sort((a, b) => {
+      const fallback = originalIndex.get(a) - originalIndex.get(b);
+
+      if (sortValue === 'featured') return fallback;
+      if (sortValue === 'best-selling') return bestSellingFor(b) - bestSellingFor(a) || fallback;
+      if (sortValue === 'alpha-asc') return titleFor(a).localeCompare(titleFor(b)) || fallback;
+      if (sortValue === 'alpha-desc') return titleFor(b).localeCompare(titleFor(a)) || fallback;
+      if (sortValue === 'date-asc') return dateFor(a) - dateFor(b) || fallback;
+      if (sortValue === 'date-desc') return dateFor(b) - dateFor(a) || fallback;
+
       const diff = Number(a.dataset.price) - Number(b.dataset.price);
-      return sortValue === 'price-desc' ? -diff : diff;
+      return sortValue === 'price-desc' ? -diff || fallback : diff || fallback;
     });
     sorted.forEach(card => grid.appendChild(card));
   }
@@ -390,6 +461,35 @@ function initShopFilters() {
   function syncMirroredInputs(source) {
     document.querySelectorAll(`input[name="${source.name}"][value="${source.value}"]`).forEach(input => {
       if (input !== source) input.checked = source.checked;
+    });
+  }
+
+  function syncPriceControls(source) {
+    let minValue = Number(document.querySelector('[data-price-min]')?.value ?? priceRangeMin);
+    let maxValue = Number(document.querySelector('[data-price-max]')?.value ?? priceRangeMax);
+
+    if (source?.matches('[data-price-min-range], [data-price-min]')) minValue = Number(source.value);
+    if (source?.matches('[data-price-max-range], [data-price-max]')) maxValue = Number(source.value);
+
+    minValue = Math.max(priceRangeMin, Math.min(minValue, priceRangeMax));
+    maxValue = Math.max(priceRangeMin, Math.min(maxValue, priceRangeMax));
+    if (minValue > maxValue) {
+      if (source?.matches('[data-price-min-range], [data-price-min]')) maxValue = minValue;
+      else minValue = maxValue;
+    }
+
+    const minPercent = ((minValue - priceRangeMin) / (priceRangeMax - priceRangeMin)) * 100;
+    const maxPercent = ((maxValue - priceRangeMin) / (priceRangeMax - priceRangeMin)) * 100;
+
+    document.querySelectorAll('[data-price-min], [data-price-min-range]').forEach(input => {
+      input.value = minValue;
+    });
+    document.querySelectorAll('[data-price-max], [data-price-max-range]').forEach(input => {
+      input.value = maxValue;
+    });
+    document.querySelectorAll('[data-price-track]').forEach(track => {
+      track.style.setProperty('--price-min', `${minPercent}%`);
+      track.style.setProperty('--price-max', `${maxPercent}%`);
     });
   }
 
@@ -419,6 +519,11 @@ function initShopFilters() {
 
   document.querySelectorAll('[data-shop-filter-panel] input').forEach(input => {
     input.addEventListener('change', () => {
+      if (input.matches('[data-price-min], [data-price-max], [data-price-min-range], [data-price-max-range]')) {
+        syncPriceControls(input);
+        applyFilters();
+        return;
+      }
       if (input.name === 'category' && input.value === 'all' && input.checked) {
         document.querySelectorAll('input[name="category"]').forEach(categoryInput => {
           if (categoryInput.value !== 'all') categoryInput.checked = false;
@@ -435,6 +540,13 @@ function initShopFilters() {
         });
       }
       syncMirroredInputs(input);
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('[data-price-min], [data-price-max], [data-price-min-range], [data-price-max-range]').forEach(input => {
+    input.addEventListener('input', () => {
+      syncPriceControls(input);
       applyFilters();
     });
   });
@@ -457,6 +569,7 @@ function initShopFilters() {
   if (closeButton) closeButton.addEventListener('click', closeDrawer);
   if (backdrop) backdrop.addEventListener('click', closeDrawer);
 
+  syncPriceControls();
   applyFilters();
 }
 
