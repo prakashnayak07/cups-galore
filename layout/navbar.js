@@ -254,8 +254,8 @@ const catItems = [
 
 function buildDesktopCatItems() {
   return catItems.map(c => `
-    <a href="#" class="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity duration-150">
-      <div class="size-[240px] overflow-hidden shrink-0">
+    <a href="#" class="flex flex-col items-center gap-3">
+      <div class="size-[240px] shrink-0 transition-transform duration-300 ease-out hover:scale-110">
         <img src="assets/images/${c.img}.png" alt="${c.label}" class="size-full object-cover">
       </div>
       <div class="flex flex-col gap-1 items-center text-center">
