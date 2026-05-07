@@ -871,6 +871,15 @@
   .min-h-\[500px\] {
     min-height: 500px;
   }
+  .min-h-\[645px\] {
+    min-height: 645px;
+  }
+  .min-h-\[745px\] {
+    min-height: 745px;
+  }
+  .min-h-\[755px\] {
+    min-height: 755px;
+  }
   .min-h-\[765px\] {
     min-height: 765px;
   }
@@ -2809,6 +2818,11 @@
       display: block;
     }
   }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
   .md\:h-\[449px\] {
     @media (width >= 48rem) {
       height: 449px;
@@ -2986,9 +3000,24 @@
       height: 600px;
     }
   }
+  .lg\:max-h-\[745px\] {
+    @media (width >= 64rem) {
+      max-height: 745px;
+    }
+  }
+  .lg\:max-h-\[755px\] {
+    @media (width >= 64rem) {
+      max-height: 755px;
+    }
+  }
   .lg\:max-h-\[760px\] {
     @media (width >= 64rem) {
       max-height: 760px;
+    }
+  }
+  .lg\:min-h-\[745px\] {
+    @media (width >= 64rem) {
+      min-height: 745px;
     }
   }
   .lg\:min-h-\[765px\] {
@@ -3383,6 +3412,16 @@
       height: 602px;
     }
   }
+  .xl\:max-h-\[745px\] {
+    @media (width >= 80rem) {
+      max-height: 745px;
+    }
+  }
+  .xl\:max-h-\[755px\] {
+    @media (width >= 80rem) {
+      max-height: 755px;
+    }
+  }
   .xl\:max-h-\[765px\] {
     @media (width >= 80rem) {
       max-height: 765px;
@@ -3391,6 +3430,11 @@
   .xl\:min-h-\[420px\] {
     @media (width >= 80rem) {
       min-height: 420px;
+    }
+  }
+  .xl\:min-h-\[745px\] {
+    @media (width >= 80rem) {
+      min-height: 745px;
     }
   }
   .xl\:w-\[49\.6\%\] {
