@@ -569,6 +569,29 @@ function initShopFilters() {
   if (closeButton) closeButton.addEventListener('click', closeDrawer);
   if (backdrop) backdrop.addEventListener('click', closeDrawer);
 
+  const desktopToggle = document.getElementById('shop-filter-toggle');
+  const desktopDropdown = document.getElementById('shop-filter-dropdown');
+  const desktopChevron = document.getElementById('shop-filter-toggle-chevron');
+  if (desktopToggle && desktopDropdown) {
+    desktopToggle.addEventListener('click', () => {
+      const isOpen = desktopDropdown.dataset.open === 'true';
+      if (isOpen) {
+        desktopDropdown.style.maxHeight = desktopDropdown.scrollHeight + 'px';
+        requestAnimationFrame(() => { desktopDropdown.style.maxHeight = '0px'; });
+        desktopDropdown.dataset.open = 'false';
+      } else {
+        desktopDropdown.style.maxHeight = desktopDropdown.scrollHeight + 'px';
+        desktopDropdown.dataset.open = 'true';
+        desktopDropdown.addEventListener('transitionend', function handler() {
+          if (desktopDropdown.dataset.open === 'true') desktopDropdown.style.maxHeight = 'none';
+          desktopDropdown.removeEventListener('transitionend', handler);
+        });
+      }
+      desktopToggle.setAttribute('aria-expanded', String(!isOpen));
+      if (desktopChevron) desktopChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+  }
+
   syncPriceControls();
   applyFilters();
 }

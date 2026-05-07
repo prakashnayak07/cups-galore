@@ -43,14 +43,27 @@
 
     <section class="w-full">
       <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-0 py-8 lg:py-[42px]">
-        <div class="flex items-center justify-between gap-4 mb-4 lg:hidden">
-          <button id="shop-filter-open"
-            class="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e2e8f0] px-4 text-sm text-[#334155]">
-            <img src="assets/icons/shop/icon-filter.svg" alt="" class="size-[14px]" aria-hidden="true" />
-            Filter
-            <span class="shop-filter-count inline-flex size-5 items-center justify-center rounded-full bg-[#f1f5f9] text-[10px] font-semibold">0</span>
+        <div class="lg:hidden mb-4 border border-[#f1f5f9]">
+          <button type="button" id="shop-filter-toggle"
+            class="flex w-full items-center justify-between gap-3 px-3 py-3 cursor-pointer"
+            aria-expanded="false" aria-controls="shop-filter-dropdown">
+            <span class="flex items-center gap-2 min-w-0">
+              <img src="assets/icons/shop/icon-filter.svg" alt="" class="size-[14px]" aria-hidden="true" />
+              <span class="text-sm leading-[19.88px] text-[#334155]">Filter</span>
+            </span>
+            <span class="flex items-center gap-3">
+              <span class="shop-filter-count inline-flex size-5 items-center justify-center rounded-full bg-[#f1f5f9] text-[10px] font-semibold text-[#334155]">0</span>
+              <svg id="shop-filter-toggle-chevron" class="size-4 text-[#334155] transition-transform" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
           </button>
-          <p id="shop-result-count" class="text-sm text-[#475569]">9 products</p>
+          <div id="shop-filter-dropdown" class="overflow-hidden"
+            style="max-height: 0; transition: max-height 0.35s ease-in-out;">
+            <div class="border-t border-[#e2e8f0]">
+              <div class="shop-filter-panel" data-shop-filter-panel></div>
+            </div>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] items-start">
