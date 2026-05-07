@@ -488,6 +488,15 @@
   .z-50 {
     z-index: 50;
   }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+  .order-3 {
+    order: 3;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -2915,9 +2924,24 @@
       top: calc(var(--spacing) * 0);
     }
   }
+  .lg\:order-1 {
+    @media (width >= 64rem) {
+      order: 1;
+    }
+  }
+  .lg\:order-2 {
+    @media (width >= 64rem) {
+      order: 2;
+    }
+  }
   .lg\:mt-0 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .lg\:mt-3 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 3);
     }
   }
   .lg\:mt-\[68px\] {
