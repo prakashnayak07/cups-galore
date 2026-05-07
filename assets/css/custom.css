@@ -235,9 +235,16 @@
   justify-content: center;
   gap: 8px;
   flex: 1;
-  padding: 14px 16px;
-  font-size: 16px;
+  padding: 14px 12px;
+  font-size: 14px;
   line-height: 22.72px;
+  white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .shop-detail-button {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
 }
 .shop-detail-button-secondary {
   border: 1px solid #e2e8f0;
