@@ -1058,6 +1058,9 @@
   .max-w-\[980px\] {
     max-width: 980px;
   }
+  .max-w-\[1024px\] {
+    max-width: 1024px;
+  }
   .max-w-\[1180px\] {
     max-width: 1180px;
   }
@@ -3510,6 +3513,11 @@
   .xl\:py-\[60px\] {
     @media (width >= 80rem) {
       padding-block: 60px;
+    }
+  }
+  .xl\:py-\[64px\] {
+    @media (width >= 80rem) {
+      padding-block: 64px;
     }
   }
   .xl\:py-\[80px\] {

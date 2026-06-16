@@ -266,10 +266,10 @@ document.querySelector('footer').innerHTML = `
     </p>
 
     <div class="flex items-center justify-center flex-wrap">
-      <a href="#" class="px-3 py-2 text-[16px] text-[#334155]  transition-colors duration-150">Terms</a>
-      <a href="#" class="px-3 py-2 text-[16px] text-[#334155]  transition-colors duration-150">Privacy</a>
-      <a href="#" class="px-3 py-2 text-[16px] text-[#334155]  transition-colors duration-150">Cookies</a>
-      <a href="#" class="px-3 py-2 text-[16px] text-[#334155]  transition-colors duration-150">Sitemap</a>
+      <a href="terms.html" class="px-3 py-2 text-[16px] text-[#334155] hover:text-[#065386] transition-colors duration-150">Terms</a>
+      <a href="privacy.html" class="px-3 py-2 text-[16px] text-[#334155] hover:text-[#065386] transition-colors duration-150">Privacy</a>
+      <a href="cookies.html" class="px-3 py-2 text-[16px] text-[#334155] hover:text-[#065386] transition-colors duration-150">Cookies</a>
+      <a href="sitemap.html" class="px-3 py-2 text-[16px] text-[#334155] hover:text-[#065386] transition-colors duration-150">Sitemap</a>
     </div>
 
     <div
