@@ -1431,6 +1431,10 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
   .border-\[\#334155\] {
     border-color: #334155;
   }
@@ -2371,6 +2375,11 @@
   .placeholder\:text-\[\#94a3b8\] {
     &::placeholder {
       color: #94a3b8;
+    }
+  }
+  .placeholder\:text-\[\#475569\] {
+    &::placeholder {
+      color: #475569;
     }
   }
   .focus-within\:border-\[\#065386\] {

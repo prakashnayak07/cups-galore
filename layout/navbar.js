@@ -92,14 +92,16 @@ document.querySelector('header').innerHTML = `
         </a>
 
         <!-- Search bar (desktop only) -->
-        <div class="hidden lg:flex flex-1 min-w-0 items-center justify-between max-w-[720px] mx-auto bg-[rgba(248,250,252,0.5)] border border-[#e2e8f0] rounded-[999px] px-4 py-3 cursor-text">
-          <span class="text-[14px] text-[#475569] leading-[19.6px] tracking-[-0.154px] select-none">Search</span>
-          <div class="overflow-hidden relative shrink-0 size-5">
+        <form action="shop.html" method="get" role="search"
+          class="hidden lg:flex flex-1 min-w-0 items-center justify-between max-w-[720px] mx-auto bg-[rgba(248,250,252,0.5)] border border-[#e2e8f0] rounded-[999px] px-4 py-3 focus-within:border-[#065386] transition-colors">
+          <input type="text" name="q" placeholder="Search"
+            class="flex-1 min-w-0 bg-transparent outline-none border-none text-[14px] text-[#475569] placeholder:text-[#475569] leading-[19.6px] tracking-[-0.154px]">
+          <button type="submit" aria-label="Search" class="overflow-hidden relative shrink-0 size-5 cursor-pointer">
             <div class="absolute inset-[12.5%]">
               <img src="assets/icons/icon-search.svg" alt="" class="absolute inset-[-4%] max-w-none size-[108%]" aria-hidden="true">
             </div>
-          </div>
-        </div>
+          </button>
+        </form>
 
         <!-- Spacer (mobile only) -->
         <div class="flex-1 lg:hidden"></div>
